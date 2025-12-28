@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergic Fungal Rhinosinusitis: Clinical Masterclass</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="text-slate-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="w-full md:w-64 bg-slate-900 text-slate-300 flex-shrink-0 sticky top-0 md:h-screen overflow-y-auto z-50">
+            <div class="p-6 border-b border-slate-700">
+                <h1 class="text-xl font-bold text-teal-400">Otopedia<br><span class="text-white text-lg font-light">AFRS Masterclass</span></h1>
+                <p class="text-xs mt-2 text-slate-400">For Medical Professionals</p>
+            </div>
+            <ul class="py-4 space-y-1">
+                <li><button onclick="scrollToSection('overview')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3 active"><i class="fas fa-microscope w-5"></i> Overview & Epi</button></li>
+                <li><button onclick="scrollToSection('pathogenesis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-dna w-5"></i> Pathogenesis</button></li>
+                <li><button onclick="scrollToSection('diagnosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-user-md w-5"></i> Diagnosis</button></li>
+                <li><button onclick="scrollToSection('staging')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-layer-group w-5"></i> Staging</button></li>
+                <li><button onclick="scrollToSection('management')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-procedures w-5"></i> Management</button></li>
+                <li><button onclick="scrollToSection('prognosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-chart-line w-5"></i> Prognosis</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-screen scroll-smooth" id="main-content">
+            
+            <!-- Hero Header -->
+            <header class="mb-12 border-b pb-6 border-slate-200">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <a href="index.html" class="text-teal-600 hover:text-teal-800 text-sm inline-block mb-2">&larr; Back to Home</a>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Allergic Fungal Rhinosinusitis</h2>
+                        <p class="text-xl text-teal-700 font-medium italic">"AFRS / Eosinophilic Fungal Rhinosinusitis"</p>
+                    </div>
+                    <div class="hidden md:block text-right">
+                        <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-teal-400">Inflammatory Disease</span>
+                        <p class="text-sm text-slate-500 mt-1">ICD-10: J32.9 / J33.8</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm">
+                    <p class="text-sm md:text-base text-blue-900">
+                        <strong>Faculty Note:</strong> AFRS is a non-invasive, fungus-mediated inflammatory pansinusitis. Characterized by "allergic mucin" and a robust Th2 immune response. It often causes silent sinus expansion and bony erosion. Success requires thorough surgical debridement followed by aggressive long-term medical therapy.
+                    </p>
+                </div>
+            </header>
+
+            <!-- SECTION 1: OVERVIEW & EPIDEMIOLOGY -->
+            <section id="overview" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">1</span> 
+                    Epidemiology & Demographics
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Text Content -->
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Key Characteristics</h4>
+                            <ul class="space-y-3 text-slate-600 list-disc list-inside text-sm">
+                                <li><strong>Incidence:</strong> 5–10% of all chronic rhinosinusitis cases requiring surgery.</li>
+                                <li><strong>Climate:</strong> Strong preference for warm, humid regions (Southern US, India, SE Asia).</li>
+                                <li><strong>Gender:</strong> Slight male predominance (~60%).</li>
+                                <li><strong>Age:</strong> Primarily adolescents and young adults (Median: 20–30 years).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Primary Risk Factors</h4>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div class="p-3 bg-slate-50 rounded">
+                                    <i class="fas fa-allergies text-2xl text-teal-500 mb-2"></i>
+                                    <p class="text-xs font-semibold">Atopy / AR</p>
+                                </div>
+                                <div class="p-3 bg-slate-50 rounded">
+                                    <i class="fas fa-lungs text-2xl text-teal-600 mb-2"></i>
+                                    <p class="text-xs font-semibold">Asthma</p>
+                                </div>
+                                <div class="p-3 bg-slate-50 rounded">
+                                    <i class="fas fa-sun text-2xl text-yellow-500 mb-2"></i>
+                                    <p class="text-xs font-semibold">Humid Climate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-slate-700 mb-2 text-center">Age Distribution at Presentation</h4>
+                        <p class="text-xs text-slate-500 text-center mb-4">Peak incidence occurs in the 2nd and 3rd decades of life.</p>
+                        <div class="h-64">
+                            <canvas id="ageChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: PATHOGENESIS -->
+            <section id="pathogenesis" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">2</span> 
+                    Pathogenesis & Etiology
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Causative Fungi</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-teal-50 text-teal-700 rounded-full border border-teal-200 text-sm font-medium">Bipolaris spicifera</span>
+                            <span class="px-3 py-1 bg-teal-50 text-teal-700 rounded-full border border-teal-200 text-sm font-medium">Curvularia</span>
+                            <span class="px-3 py-1 bg-teal-50 text-teal-700 rounded-full border border-teal-200 text-sm font-medium">Aspergillus</span>
+                            <span class="px-3 py-1 bg-teal-50 text-teal-700 rounded-full border border-teal-200 text-sm font-medium">Alternaria</span>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-600 italic">Common environmental molds driving a dysregulated hypersensitivity response.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Immunological Markers</h4>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex justify-between border-b pb-1"><span>Total Serum IgE</span> <span class="font-bold text-slate-800">>1000 IU/mL</span></li>
+                            <li class="flex justify-between border-b pb-1"><span>Peripheral Eosinophilia</span> <span class="font-bold text-slate-800">Common</span></li>
+                            <li class="flex justify-between border-b pb-1"><span>Specific Fungal IgE</span> <span class="font-bold text-slate-800">Positive (Type I)</span></li>
+                            <li class="flex justify-between"><span>Cytokine Profile</span> <span class="font-bold text-teal-600">Th2 (IL-4, IL-5)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-lg text-slate-300 shadow-lg">
+                    <h4 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fas fa-vial text-teal-400"></i> The "Allergic Mucin" Profile</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                        <div class="p-4 bg-slate-800 rounded border border-slate-700">
+                            <h5 class="text-teal-400 font-bold mb-1">Gross Appearance</h5>
+                            <p>Tenacious, viscid, and typically described as having a "peanut butter" or "machine oil" consistency.</p>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded border border-slate-700">
+                            <h5 class="text-teal-400 font-bold mb-1">Microscopy</h5>
+                            <p>Eosinophil-rich debris with Charcot-Leyden crystals and scattered non-invasive fungal hyphae.</p>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded border border-slate-700">
+                            <h5 class="text-teal-400 font-bold mb-1">Tissue Effect</h5>
+                            <p>Accumulation causes pressure-induced bone remodeling and thinning, potentially leading to expansion into the orbit.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: DIAGNOSIS -->
+            <section id="diagnosis" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">3</span> 
+                    Diagnostic Workup
+                </h3>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 mb-8">
+                    <h4 class="font-bold text-lg text-teal-700 mb-4">Bent & Kuhn Diagnostic Criteria (1994)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded text-center">
+                            <p class="text-xs font-bold text-blue-800 uppercase mb-2">1. Hypersensitivity</p>
+                            <i class="fas fa-check-circle text-blue-500"></i>
+                            <p class="text-[10px] text-slate-500 mt-1">Type I (Skin/RAST)</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded text-center">
+                            <p class="text-xs font-bold text-blue-800 uppercase mb-2">2. Nasal Polyps</p>
+                            <i class="fas fa-check-circle text-blue-500"></i>
+                            <p class="text-[10px] text-slate-500 mt-1">Diffuse Polyposis</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded text-center">
+                            <p class="text-xs font-bold text-blue-800 uppercase mb-2">3. CT Findings</p>
+                            <i class="fas fa-check-circle text-blue-500"></i>
+                            <p class="text-[10px] text-slate-500 mt-1">Hyperattenuation</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded text-center">
+                            <p class="text-xs font-bold text-blue-800 uppercase mb-2">4. Eosinophilic Mucin</p>
+                            <i class="fas fa-check-circle text-blue-500"></i>
+                            <p class="text-[10px] text-slate-500 mt-1">Non-invasive</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded text-center">
+                            <p class="text-xs font-bold text-blue-800 uppercase mb-2">5. Fungal Stain</p>
+                            <i class="fas fa-check-circle text-blue-500"></i>
+                            <p class="text-[10px] text-slate-500 mt-1">GMS / Culture (+)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg border-t-4 border-blue-500 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-camera text-blue-500 mr-2"></i>CT (Non-Contrast)</h4>
+                        <p class="text-sm text-slate-600">Look for the <strong>"Double Density" sign</strong>: hyperattenuating mucin centers surrounded by lower attenuation inflammatory mucosa. Sinus expansion and bone thinning are common.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border-t-4 border-teal-500 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-magnet text-teal-500 mr-2"></i>MRI (Contrast)</h4>
+                        <p class="text-sm text-slate-600">T2-weighted images show a <strong>signal void</strong> (dark appearance) in areas of dense fungal mucin. Superior for evaluating orbital or intracranial extension.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border-t-4 border-purple-500 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-microscope text-purple-500 mr-2"></i>Histopathology</h4>
+                        <p class="text-sm text-slate-600">GMS or PAS stain is essential to visualize fungal hyphae within the mucin. Mucin should show degranulating eosinophils and Charcot-Leyden crystals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: STAGING (Interactive) -->
+            <section id="staging" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">4</span> 
+                    Staging Systems
+                </h3>
+                
+                <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-50 border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-sm text-slate-500">Kupferberg (Endoscopic) is used for clinical surveillance. Bent & Kuhn (CT) for anatomical extent.</p>
+                        <div class="flex bg-slate-200 rounded p-1">
+                            <button onclick="switchSystem('kupferberg')" id="tab-kupferberg" class="px-4 py-1.5 rounded text-sm font-semibold bg-white text-slate-800 shadow-sm transition-all">Kupferberg (Endo)</button>
+                            <button onclick="switchSystem('bentkuhn')" id="tab-bentkuhn" class="px-4 py-1.5 rounded text-sm font-medium text-slate-600 hover:text-slate-800 transition-all">Bent & Kuhn (CT)</button>
+                        </div>
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <div id="staging-content" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                            <!-- Controls -->
+                            <div id="staging-btns" class="md:col-span-4 flex flex-col space-y-2">
+                                <!-- Buttons injected by JS -->
+                            </div>
+
+                            <!-- Detail Display -->
+                            <div class="md:col-span-8 bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col items-center justify-center text-center">
+                                <div id="stage-visual" class="text-5xl text-teal-500 mb-4">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <h4 id="stage-title" class="text-2xl font-bold text-slate-800 mb-2">Select a Stage</h4>
+                                <p id="stage-desc" class="text-slate-600 mb-4 max-w-md">Click on a stage to see clinical findings and implications.</p>
+                                <div class="w-full bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                    <h5 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Clinical Implication</h5>
+                                    <p id="stage-implication" class="text-sm text-slate-700 font-medium">---</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: MANAGEMENT -->
+            <section id="management" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">5</span> 
+                    Management Algorithm
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg border border-slate-100 shadow-sm">
+                        <h4 class="font-bold text-lg text-teal-700 mb-6 flex items-center gap-2">
+                            <i class="fas fa-vial-circle-check"></i> Standard Treatment Protocol
+                        </h4>
+                        <div class="space-y-6 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-100">
+                            <div class="relative pl-10">
+                                <span class="absolute left-0 top-1 w-7 h-7 bg-teal-600 text-white rounded-full flex items-center justify-center text-xs font-bold z-10">1</span>
+                                <h5 class="font-bold text-slate-800 text-sm">Pre-operative Steroids</h5>
+                                <p class="text-xs text-slate-500 mt-1">Short course of oral Prednisone to reduce polyp mass and vascularity.</p>
+                            </div>
+                            <div class="relative pl-10">
+                                <span class="absolute left-0 top-1 w-7 h-7 bg-teal-600 text-white rounded-full flex items-center justify-center text-xs font-bold z-10">2</span>
+                                <h5 class="font-bold text-slate-800 text-sm">FESS (Complete Clearance)</h5>
+                                <p class="text-xs text-slate-500 mt-1">Wide drainage and meticulous removal of all allergic mucin and fungal debris.</p>
+                            </div>
+                            <div class="relative pl-10">
+                                <span class="absolute left-0 top-1 w-7 h-7 bg-teal-600 text-white rounded-full flex items-center justify-center text-xs font-bold z-10">3</span>
+                                <h5 class="font-bold text-slate-800 text-sm">Post-operative Irrigation</h5>
+                                <p class="text-xs text-slate-500 mt-1">Budesonide or Fluticasone rinses are the mainstay of long-term maintenance.</p>
+                            </div>
+                            <div class="relative pl-10">
+                                <span class="absolute left-0 top-1 w-7 h-7 bg-slate-400 text-white rounded-full flex items-center justify-center text-xs font-bold z-10">4</span>
+                                <h5 class="font-bold text-slate-800 text-sm">Surveillance (Total IgE)</h5>
+                                <p class="text-xs text-slate-500 mt-1">Monitor IgE levels every 3-6 months as a barometer for recurrence.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded shadow-sm">
+                            <h4 class="font-bold text-yellow-800 mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i> Clinical Pearl</h4>
+                            <p class="text-sm text-yellow-900 leading-relaxed">
+                                "Total Serum IgE is the 'ESR' of AFRS." A rising IgE level post-operatively often precedes clinical recurrence of polyps and mucin. Establish a baseline post-clearance IgE level once the patient is stable.
+                            </p>
+                        </div>
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-5 rounded shadow-sm">
+                            <h4 class="font-bold text-teal-800 mb-2 flex items-center gap-2"><i class="fas fa-bolt"></i> Trend Watch</h4>
+                            <p class="text-sm text-teal-900 leading-relaxed">
+                                <strong>Biologics:</strong> Monoclonal antibodies targeting the Th2 pathway (e.g., Dupilumab) are showing great promise for refractory AFRS cases, potentially reducing the need for repeat surgeries.
+                            </p>
+                        </div>
+                        <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded shadow-sm">
+                            <h4 class="font-bold text-red-800 mb-2 flex items-center gap-2"><i class="fas fa-exclamation-triangle"></i> Warning</h4>
+                            <p class="text-sm text-red-900 leading-relaxed">
+                                Avoid oral antifungals as primary therapy; their efficacy is unproven and potential for side effects (liver toxicity) is high. Focus remains on local control and steroids.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: PROGNOSIS -->
+            <section id="prognosis" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">6</span> 
+                    Prognosis & Recurrence
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-slate-700 mb-4 text-center">Recurrence Rate by Adherence</h4>
+                        <div class="h-64">
+                            <canvas id="recurrenceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Long-term Outlook</h4>
+                            <p class="text-sm text-slate-600 mb-4">Recurrence is common (30-60%) due to the chronic nature of the hypersensitivity response. However, permanent complications are rare with proper management.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 bg-green-50 rounded border border-green-100">
+                                    <p class="text-xs font-bold text-green-800">Survival</p>
+                                    <p class="text-xl font-bold text-green-600">~100%</p>
+                                    <p class="text-[10px] text-green-700">Disease is non-malignant</p>
+                                </div>
+                                <div class="p-3 bg-orange-50 rounded border border-orange-100">
+                                    <p class="text-xs font-bold text-orange-800">Recurrence</p>
+                                    <p class="text-xl font-bold text-orange-600">High</p>
+                                    <p class="text-[10px] text-orange-700">Without medical therapy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-2">Surveillance Schedule</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li class="flex items-center gap-2"><i class="fas fa-calendar-alt text-teal-500"></i> Months 1-6: Monthly Endoscopy</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-calendar-alt text-teal-500"></i> Year 1: Total IgE every 3 months</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-calendar-alt text-teal-500"></i> Year 2+: Semi-annual follow-up</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+                <p>&copy; 2024 Otopedia Clinical Masterclass • For Educational Purposes Only</p>
+                <p class="mt-1">Allergic Fungal Rhinosinusitis Resource Module</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // --- 1. Navigation & Scrolling ---
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            // Update active state in nav
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.classList.remove('active', 'bg-slate-800', 'text-teal-400');
+                if(btn.onclick.toString().includes(id)) {
+                    btn.classList.add('active', 'bg-slate-800', 'text-teal-400');
+                }
+            });
+        }
+
+        // --- 2. Chart: Age Distribution ---
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        const ageChart = new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['0-14', '15-24', '25-34', '35-44', '45+'],
+                datasets: [{
+                    label: 'Prevalence (%)',
+                    data: [10, 45, 30, 10, 5],
+                    backgroundColor: 'rgba(13, 148, 136, 0.7)',
+                    borderColor: '#0d9488',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 60, title: { display: true, text: 'Percentage (%)' } },
+                    x: { title: { display: true, text: 'Age Group (Years)' } }
+                }
+            }
+        });
+
+        // --- 3. Chart: Recurrence ---
+        const recCtx = document.getElementById('recurrenceChart').getContext('2d');
+        const recurrenceChart = new Chart(recCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['High Adherence', 'Moderate', 'Low Adherence'],
+                datasets: [{
+                    data: [15, 40, 75],
+                    backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Recurrence Rate (%) vs. Adherence' }
+                }
+            }
+        });
+
+        // --- 4. Staging Data & Logic ---
+        const stagingData = {
+            kupferberg: [
+                { id: 'k0', label: 'Stage 0', title: 'Stage 0: No Disease', desc: 'No evidence of disease on endoscopy.', imp: 'Remission. Continue maintenance irrigations.', icon: 'fa-check-circle' },
+                { id: 'k1', label: 'Stage 1', title: 'Stage 1: Edema', desc: 'Mucosal edema and/or allergic mucin present.', imp: 'Early recurrence. Consider increasing steroid frequency.', icon: 'fa-water' },
+                { id: 'k2', label: 'Stage 2', title: 'Stage 2: Polyps', desc: 'Nasal polyps and/or allergic mucin visible.', imp: 'Active disease. Oral steroids or revision surgery may be needed.', icon: 'fa-bacterial' },
+                { id: 'k3', label: 'Stage 3', title: 'Stage 3: Severe', desc: 'Polyps, allergic mucin, and fungal debris.', imp: 'High burden. Surgical debridement usually required.', icon: 'fa-exclamation-circle' }
+            ],
+            bentkuhn: [
+                { id: 'b0', label: 'Stage 0', title: 'Stage 0: Normal', desc: 'Normal appearance of sinuses on CT.', imp: 'Baseline or complete remission.', icon: 'fa-circle' },
+                { id: 'b1', label: 'Stage 1', title: 'Stage 1: Mild', desc: 'Mild disease (<50% opacification of involved sinuses).', imp: 'Localized disease. Medical management priority.', icon: 'fa-adjust' },
+                { id: 'b2', label: 'Stage 2', title: 'Stage 2: Moderate', desc: 'Moderate disease (>50% opacification).', imp: 'Progressive disease. Surgical planning indicated.', icon: 'fa-circle-half-stroke' },
+                { id: 'b3', label: 'Stage 3', title: 'Stage 3: Severe', desc: '100% opacification with expansion or erosion.', imp: 'Advanced disease. High risk of orbital/skull base complications.', icon: 'fa-solid fa-circle' }
+            ]
+        };
+
+        function switchSystem(system) {
+            // Update tabs
+            const tabs = ['tab-kupferberg', 'tab-bentkuhn'];
+            tabs.forEach(t => {
+                const el = document.getElementById(t);
+                el.classList.remove('bg-white', 'text-slate-800', 'shadow-sm', 'font-semibold');
+                el.classList.add('text-slate-600', 'font-medium');
+            });
+            const activeTab = document.getElementById(`tab-${system}`);
+            activeTab.classList.remove('text-slate-600', 'font-medium');
+            activeTab.classList.add('bg-white', 'text-slate-800', 'shadow-sm', 'font-semibold');
+
+            // Render buttons
+            const btnContainer = document.getElementById('staging-btns');
+            btnContainer.innerHTML = '';
+            stagingData[system].forEach(stage => {
+                const btn = document.createElement('button');
+                btn.id = `btn-${stage.id}`;
+                btn.className = 'stage-btn text-left p-4 rounded border-2 border-transparent hover:bg-slate-50 text-slate-600 transition-all';
+                btn.innerHTML = `${stage.label} <span class="block text-xs font-normal opacity-70">${stage.title.split(': ')[1]}</span>`;
+                btn.onclick = () => renderStage(system, stage.id);
+                btnContainer.appendChild(btn);
+            });
+
+            // Auto-render first stage
+            renderStage(system, stagingData[system][0].id);
+        }
+
+        function renderStage(system, stageId) {
+            // Update buttons styling
+            document.querySelectorAll('.stage-btn').forEach(btn => {
+                btn.classList.remove('border-teal-500', 'bg-teal-50', 'text-teal-800', 'font-bold');
+                btn.classList.add('border-transparent', 'text-slate-600');
+                const span = btn.querySelector('span');
+                if(span) span.classList.remove('text-teal-600');
+            });
+            const activeBtn = document.getElementById(`btn-${stageId}`);
+            activeBtn.classList.remove('border-transparent', 'text-slate-600');
+            activeBtn.classList.add('border-teal-500', 'bg-teal-50', 'text-teal-800', 'font-bold');
+            activeBtn.querySelector('span').classList.add('text-teal-600');
+
+            // Update content
+            const stage = stagingData[system].find(s => s.id === stageId);
+            document.getElementById('stage-title').innerText = stage.title;
+            document.getElementById('stage-desc').innerHTML = stage.desc;
+            document.getElementById('stage-implication').innerText = stage.imp;
+            document.getElementById('stage-visual').innerHTML = `<i class="fas ${stage.icon}"></i>`;
+        }
+
+        // Initialize staging
+        switchSystem('kupferberg');
+
+    </script>
+</body>
+</html>
