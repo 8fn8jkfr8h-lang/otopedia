@@ -16,57 +16,59 @@
             <p class="text-slate-600 mt-2">Masterclasses and clinical guides for medical professionals</p>
         </header>
         
-        <main class="max-w-4xl w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="olfactory_neurobalstoma.html" class="interactive-card bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-lg transition-shadow">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-microscope text-2xl text-teal-600 mr-3"></i>
-                            <h2 class="text-xl font-bold text-slate-800">Olfactory Neuroblastoma</h2>
-                        </div>
+        <main class="max-w-6xl w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Ear Section -->
+                <section>
+                    <div class="flex items-center mb-6 border-b border-slate-200 pb-2">
+                        <i class="fas fa-ear-listen text-2xl text-teal-700 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-slate-900">Ear</h2>
                     </div>
-                    <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-3 py-1 rounded border border-nose-300">Nose</span>
-                </a>
-                
-                <a href="MOE.html" class="interactive-card bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-lg transition-shadow">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-ear-listen text-2xl text-teal-600 mr-3"></i>
-                            <h2 class="text-xl font-bold text-slate-800">Malignant Otitis Externa</h2>
-                        </div>
+                    <div class="space-y-4">
+                        <a href="MOE.html" class="interactive-card block bg-white p-5 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Malignant Otitis Externa</h3>
+                            <span class="inline-block bg-ear-100 text-ear-800 text-xs font-semibold px-2 py-0.5 rounded border border-ear-300">Ear</span>
+                        </a>
                     </div>
-                    <span class="inline-block bg-ear-100 text-ear-800 text-xs font-semibold px-3 py-1 rounded border border-ear-300">Ear</span>
-                </a>
+                </section>
 
-                <a href="JNA.html" class="interactive-card bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-lg transition-shadow">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-skull text-2xl text-teal-600 mr-3"></i>
-                            <h2 class="text-xl font-bold text-slate-800">Juvenile Nasopharyngeal Angiofibroma</h2>
-                        </div>
+                <!-- Nose Section -->
+                <section>
+                    <div class="flex items-center mb-6 border-b border-slate-200 pb-2">
+                        <i class="fas fa-microscope text-2xl text-teal-700 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-slate-900">Nose</h2>
                     </div>
-                    <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-3 py-1 rounded border border-nose-300">Nose</span>
-                </a>
+                    <div class="space-y-4">
+                        <a href="olfactory_neurobalstoma.html" class="interactive-card block bg-white p-5 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Olfactory Neuroblastoma</h3>
+                            <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-2 py-0.5 rounded border border-nose-300">Nose</span>
+                        </a>
+                        
+                        <a href="JNA.html" class="interactive-card block bg-white p-5 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Juvenile Nasopharyngeal Angiofibroma</h3>
+                            <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-2 py-0.5 rounded border border-nose-300">Nose</span>
+                        </a>
 
-                <a href="larynx_ca.html" class="interactive-card bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-lg transition-shadow">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-wind text-2xl text-teal-600 mr-3"></i>
-                            <h2 class="text-xl font-bold text-slate-800">Laryngeal Carcinoma</h2>
-                        </div>
+                        <a href="AFRS.html" class="interactive-card block bg-white p-5 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Allergic Fungal Rhinosinusitis</h3>
+                            <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-2 py-0.5 rounded border border-nose-300">Nose</span>
+                        </a>
                     </div>
-                    <span class="inline-block bg-throat-100 text-throat-800 text-xs font-semibold px-3 py-1 rounded border border-throat-300">Throat</span>
-                </a>
+                </section>
 
-                <a href="AFRS.html" class="interactive-card bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-lg transition-shadow">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-bacteria text-2xl text-teal-600 mr-3"></i>
-                            <h2 class="text-xl font-bold text-slate-800">Allergic Fungal Rhinosinusitis</h2>
-                        </div>
+                <!-- Throat Section -->
+                <section>
+                    <div class="flex items-center mb-6 border-b border-slate-200 pb-2">
+                        <i class="fas fa-wind text-2xl text-teal-700 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-slate-900">Throat</h2>
                     </div>
-                    <span class="inline-block bg-nose-100 text-nose-800 text-xs font-semibold px-3 py-1 rounded border border-nose-300">Nose</span>
-                </a>
+                    <div class="space-y-4">
+                        <a href="larynx_ca.html" class="interactive-card block bg-white p-5 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">Laryngeal Carcinoma</h3>
+                            <span class="inline-block bg-throat-100 text-throat-800 text-xs font-semibold px-2 py-0.5 rounded border border-throat-300">Throat</span>
+                        </a>
+                    </div>
+                </section>
             </div>
         </main>
         
