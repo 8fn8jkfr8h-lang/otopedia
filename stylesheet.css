@@ -63,3 +63,7 @@ body {
 .bg-other-100 { background-color: #f3f4f6; }
 .text-other-800 { color: #374151; }
 .border-other-300 { border-color: #d1d5db; }
+
+.bg-headneck-100 { background-color: #f5f3ff; }
+.text-headneck-800 { color: #5b21b6; }
+.border-headneck-300 { border-color: #ddd6fe; }
