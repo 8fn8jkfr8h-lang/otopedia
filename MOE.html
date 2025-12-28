@@ -61,7 +61,7 @@
                 </div>
                 <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm">
                     <p class="text-sm md:text-base text-blue-900">
-                        <strong>Faculty Note:</strong> MOE is a severe, potentially fatal infection of the external auditory canal and skull base, predominantly affecting diabetics. Early recognition and aggressive treatment are crucial to prevent progression to cranial nerve palsies and intracranial complications.
+                        <strong>Faculty Note:</strong> Malignant Otitis Externa (MOE) is a rare but serious progressive skull base osteomyelitis predominantly affecting elderly diabetics with poor glycemic control. Unlike simple external otitis, MOE requires extended systemic antibiotic therapy (often 6-12 weeks), rigorous glycemic optimization, and close radiologic monitoring. Early recognition and aggressive management are critical to prevent intracranial extension, multiple cranial nerve palsies, and death.
                     </p>
                 </div>
             </header>
@@ -79,10 +79,11 @@
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
                             <h4 class="font-bold text-lg text-teal-700 mb-3">Key Characteristics</h4>
                             <ul class="space-y-3 text-slate-600 list-disc list-inside">
-                                <li><strong>Incidence:</strong> 1-5 per 100,000 population, higher in diabetics.</li>
-                                <li><strong>Age:</strong> Predominantly affects elderly (>60 years).</li>
-                                <li><strong>Gender:</strong> Slight male predominance.</li>
-                                <li><strong>Risk Factors:</strong> Diabetes mellitus (90-100% of cases), immunocompromised states.</li>
+                                <li><strong>Incidence:</strong> Rare disease. True incidence varies by study, estimated <0.01 per 100,000 in general population.</li>
+                                <li><strong>Age:</strong> Predominantly affects elderly (>50 years), with peak incidence in 5th-7th decades.</li>
+                                <li><strong>Gender:</strong> Equal gender distribution or slight male predominance.</li>
+                                <li><strong>Risk Factors:</strong> Diabetes mellitus (>90% of cases), immunocompromised states, prior radiation to skull base.</li>
+                                <li><strong>Epidemiology:</strong> MOE represents <5% of otitis externa cases but >90% of skull base osteomyelitis cases in diabetics.</li>
                             </ul>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
@@ -125,25 +126,25 @@
                     <!-- Text Content -->
                     <div class="space-y-4">
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <h4 class="font-bold text-lg text-teal-700 mb-3">The Pathological Cascade</h4>
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Diabetic Microenvironment</h4>
                             <p class="text-slate-600 leading-relaxed mb-4">
-                                MOE is not merely an external ear infection; it is a <strong>progressive osteomyelitis</strong> of the temporal bone. It exploits the microangiopathy of diabetes and the natural anatomical weaknesses of the external auditory canal (EAC).
+                                MOE is not merely an external ear infection; it is a <strong>progressive skull base osteomyelitis</strong> of the temporal bone. The disease exploits multiple diabetic complications: impaired glucose homeostasis, microangiopathy (reducing bone perfusion), and neutrophil dysfunction (reducing inflammatory response). These deficiencies create an immunologic environment where the external auditory canal becomes a nidus for invasive infection through anatomical weaknesses.
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                                     <span class="text-xs font-bold text-blue-600 uppercase">Step 1</span>
-                                    <p class="text-sm font-semibold mt-1">EAC Acidification Failure</p>
-                                    <p class="text-xs text-slate-500 mt-1">Alkaline cerumen in diabetics promotes Pseudomonas growth.</p>
+                                    <p class="text-sm font-semibold mt-1">EAC Colonization</p>
+                                    <p class="text-xs text-slate-500 mt-1">Pseudomonas aeruginosa preferentially colonizes the alkaline cerumen of diabetics, evading the normal acidic microenvironment.</p>
                                 </div>
                                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                                     <span class="text-xs font-bold text-blue-600 uppercase">Step 2</span>
-                                    <p class="text-sm font-semibold mt-1">Soft Tissue Invasion</p>
-                                    <p class="text-xs text-slate-500 mt-1">Passage through Fissures of Santorini or Tympanomastoid suture.</p>
+                                    <p class="text-sm font-semibold mt-1">Soft Tissue Penetration</p>
+                                    <p class="text-xs text-slate-500 mt-1">Bacteria penetrate through the bony-cartilaginous junction and Fissures of Santorini into periosteal tissues.</p>
                                 </div>
                                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                                     <span class="text-xs font-bold text-blue-600 uppercase">Step 3</span>
-                                    <p class="text-sm font-semibold mt-1">Bone Destruction</p>
-                                    <p class="text-xs text-slate-500 mt-1">Haversian system invasion leads to extensive skull base necrosis.</p>
+                                    <p class="text-sm font-semibold mt-1">Osteomyelitis</p>
+                                    <p class="text-xs text-slate-500 mt-1">Chronic, indolent osteomyelitis with progressive bone resorption via parosteal and endosteal pathways, eventually extending to skull base.</p>
                                 </div>
                             </div>
                         </div>
@@ -157,6 +158,10 @@
                             <canvas id="organismChart"></canvas>
                         </div>
                     </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 border-l-4 border-l-orange-500">
+                    <h4 class="font-bold text-lg text-orange-700 mb-3">Natural History Without Treatment</h4>
+                    <p class="text-slate-600 text-sm">MOE is characterized by <strong>unrelenting, severe otalgia</strong> that persists despite standard topical antibiotic therapy and may not correlate with clinical exam findings. Untreated disease follows an indolent course over weeks to months, with potential for rapid deterioration and spread to intracranial structures. Mortality in untreated cases can exceed 50% in diabetic patients.</p>
                 </div>
             </div>
         </section>
@@ -216,14 +221,24 @@
                 </div>
             </div>
 
-            <div class="mt-8 p-4 bg-slate-100 rounded text-sm text-slate-700">
-                <h4 class="font-bold text-slate-800 mb-2">Diagnostic Workup</h4>
-                <ul class="space-y-2">
-                    <li><strong>Imaging:</strong> CT temporal bone for bony erosion; MRI for soft tissue extent; Tc-99m bone scan for osteomyelitis confirmation.</li>
-                    <li><strong>Laboratory:</strong> ESR and CRP for monitoring; blood glucose and HbA1c; culture from EAC drainage.</li>
-                    <li><strong>Biopsy:</strong> Granulation tissue biopsy to rule out malignancy (e.g., squamous cell carcinoma).</li>
-                    <li><strong>Other:</strong> Audiometry for hearing loss; cranial nerve examination for palsies.</li>
-                </ul>
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="p-4 bg-slate-100 rounded text-sm text-slate-700">
+                    <h4 class="font-bold text-slate-800 mb-3">Imaging Studies</h4>
+                    <ul class="space-y-2">
+                        <li><strong>CT Temporal Bone:</strong> Essential for detecting bony erosion, particularly of the mastoid cortex, skull base, and petrous apex. Specificity ~90%.</li>
+                        <li><strong>MRI:</strong> Gold standard for assessing soft tissue extension, dural involvement, and staging. T1 with gadolinium shows enhancement of inflamed periosteal tissues.</li>
+                        <li><strong>Gallium-67 or Indium-111 Scintigraphy:</strong> Highly sensitive (>90%) for detecting active osteomyelitis. Serial scans used for monitoring treatment response. Normalization of scan indicates biological cure.</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-slate-100 rounded text-sm text-slate-700">
+                    <h4 class="font-bold text-slate-800 mb-3">Laboratory & Clinical Assessment</h4>
+                    <ul class="space-y-2">
+                        <li><strong>Inflammatory Markers:</strong> Baseline ESR and CRP; lack of elevation does NOT exclude MOE. Serial measurements guide treatment duration.</li>
+                        <li><strong>Glycemic Control:</strong> HbA1c and blood glucose levels. Tight glycemic control is essential for cure.</li>
+                        <li><strong>Culture:</strong> EAC drainage or biopsy specimen. Gram-negative rods (Pseudomonas) in >90% of cases.</li>
+                        <li><strong>Cranial Nerve Assessment:</strong> Formal testing for CN VII, IX, X, XII palsies. Prognostically significant if present.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -271,16 +286,16 @@
                     <h3 class="font-bold text-lg mb-4">1. Antimicrobial Strategy</h3>
                     <div class="space-y-4">
                         <div class="p-4 bg-blue-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-blue-800">Primary Monotherapy</h4>
-                            <p class="text-xs mt-1">**Ciprofloxacin** (750mg PO BID or 400mg IV TID). High bone penetration.</p>
+                            <h4 class="font-bold text-sm text-blue-800">First-Line Agent</h4>
+                            <p class="text-xs mt-1"><strong>Fluoroquinolone (Ciprofloxacin)</strong>: 750 mg PO BID or 400 mg IV q8-12h. Excellent bone penetration, high intracellular bioavailability. Treatment duration: 4-6 weeks minimum, often extended to 8-12 weeks depending on clinical response and imaging findings.</p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-slate-800">Resistance / Severe Cases</h4>
-                            <p class="text-xs mt-1">**Ceftazidime** (2g IV q8h) + Aminoglycoside or Piperacillin-Tazobactam.</p>
+                            <h4 class="font-bold text-sm text-slate-800">Severe/Resistant Cases</h4>
+                            <p class="text-xs mt-1"><strong>Anti-pseudomonal Agents:</strong> Ceftazidime (2g IV q8h), Piperacillin-tazobactam (4.5g IV q6-8h), or Aminoglycosides (Tobramycin or Amikacin) + Fluoroquinolone. Higher-dose therapy needed for poor glycemic control or CNS involvement.</p>
                         </div>
                         <div class="p-4 bg-rose-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-rose-800">Fungal MOE (Aspergillus)</h4>
-                            <p class="text-xs mt-1">Voriconazole or Amphotericin B if Pseudomonas culture is negative.</p>
+                            <h4 class="font-bold text-sm text-rose-800">Fungal Infection (Aspergillus/Mucor)</h4>
+                            <p class="text-xs mt-1"><strong>Voriconazole</strong> (IV then PO) or <strong>Amphotericin B</strong> (liposomal preferred) for culture-confirmed fungal MOE. Rare but seen in severely immunocompromised or poorly controlled diabetics. Often requires longer treatment and often surgical debridement.</p>
                         </div>
                     </div>
                 </div>
@@ -290,15 +305,15 @@
                     <div class="space-y-4">
                         <div class="p-4 bg-emerald-50 rounded-xl">
                             <h4 class="font-bold text-sm text-emerald-800">Glycemic Optimization</h4>
-                            <p class="text-xs mt-1">HbA1c reduction. Strict monitoring. MOE will NOT resolve in uncontrolled hyperglycemia.</p>
+                            <p class="text-xs mt-1"><strong>ESSENTIAL component of therapy.</strong> Target HbA1c < 7%, ideally < 6.5% during active infection. Frequent glucose monitoring. MOE will NOT resolve with persistently elevated glucose levels—this is a absolute requirement for cure, not optional adjunctive therapy.</p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-xl">
                             <h4 class="font-bold text-sm text-slate-800">Aural Toilet</h4>
-                            <p class="text-xs mt-1">Frequent, meticulous debridement of necrotic debris in clinic.</p>
+                            <p class="text-xs mt-1">Regular otologic office debridement of granulation tissue and necrotic bone under direct visualization. Facilitates medication penetration and may provide culture material. Avoid aggressive instrumentation that risks exposing more bone to infection.</p>
                         </div>
                         <div class="p-4 bg-slate-900 text-white rounded-xl">
                             <h4 class="font-bold text-sm text-emerald-400">Hyperbaric Oxygen (HBOT)</h4>
-                            <p class="text-xs mt-1">Indicated for refractory cases (Stage III/IV). Increases phagocytic activity of PMNs in hypoxic bone.</p>
+                            <p class="text-xs mt-1">Controversial adjunctive therapy. Considered for Stage III/IV disease, recurrent cases, or cranial nerve involvement. Enhanced angiogenesis and osteoblast recruitment. Literature shows 70% cure rates in treated cohorts, but unclear if benefit is independent of antibiotics alone.</p>
                         </div>
                     </div>
                 </div>
@@ -307,12 +322,12 @@
                     <h3 class="font-bold text-lg mb-4">3. Surgical Indications</h3>
                     <p class="text-xs text-slate-500 mb-4">Surgery is generally avoided (risk of exposing more bone to infection) except for:</p>
                     <ul class="space-y-2">
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> **Biopsy:** Mandatory to rule out Squamous Cell Carcinoma.</li>
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> **Abscess Drainage:** If collection forms at skull base or parotid.</li>
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> **Sequestrectomy:** Removal of dead bony fragments.</li>
+                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Biopsy:</strong> When diagnosis is uncertain or to exclude SCC of EAC. Culture obtained from granulation tissue. Risk of hemorrhage must be weighed against diagnostic benefit.</li>
+                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Abscess Drainage/I&D:</strong> Only if frank collection detected (rare in MOE—usually just cellulitis). May be necessary in intracranial complications.</li>
+                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Sequestrectomy:</strong> Removal of sequestered bone fragments if disease progresses despite antibiotics. Rarely performed and controversial due to potential for further bone exposure.</li>
                     </ul>
                     <div class="mt-4 p-3 border border-red-200 bg-red-50 rounded-lg text-[10px] text-red-700">
-                        **WARNING:** Facial nerve decompression is contraindicated; palsy is due to inflammation/toxins, not compression.
+                        <strong>⚠️ CRITICAL:</strong> Facial nerve decompression is contraindicated. CN VII palsy results from inflammatory edema and toxin-mediated injury, not mechanical compression. Surgery does not improve CN outcome and risks further complications.
                     </div>
                 </div>
             </div>
@@ -341,14 +356,14 @@
                         </div>
                         <div>
                             <h4 class="text-blue-400 font-bold text-sm uppercase">Gallium-67 vs. Indium-111</h4>
-                            <p class="text-xs text-slate-400 mt-1">Gallium scans bind to iron-binding proteins in leukocytes. When the Gallium scan normalizes, it indicates biological resolution. Treatment should continue for 1 week post-normalization.</p>
+                            <p class="text-xs text-slate-400 mt-1"><strong>Gallium-67</strong> accumulates in areas of inflammation via binding to transferrin and lactoferrin. More sensitive for detecting active osteomyelitis. <strong>Indium-111</strong> labels leukocytes directly—higher specificity. Serial scans (baseline, 4-6 weeks, 12 weeks) guide treatment duration. Normalization indicates biological cure; treatment typically continues 1-2 weeks after scan normalization.</p>
                         </div>
                         <div class="border-t border-slate-800 pt-4">
                             <h4 class="text-rose-400 font-bold text-sm">Recurrence Rate</h4>
                             <div class="w-full bg-slate-800 rounded-full h-2.5 mt-2">
-                                <div class="bg-rose-500 h-2.5 rounded-full" style="width: 20%"></div>
+                                <div class="bg-rose-500 h-2.5 rounded-full" style="width: 25%"></div>
                             </div>
-                            <p class="text-[10px] text-slate-500 mt-1">Approximately 15-20% recurrence if treatment duration is < 6 weeks.</p>
+                            <p class="text-[10px] text-slate-500 mt-1">Approximately 5-15% recurrence with adequate treatment (6-12 weeks). Rates up to 25-30% if treatment <6 weeks. Requires glycemic control for cure.</p>
                         </div>
                     </div>
                 </div>
@@ -373,7 +388,7 @@
                 </div>
             </div>
             <div class="mt-4 p-3 bg-red-50 text-red-700 text-sm rounded border border-red-100">
-                <strong>Note:</strong> Mortality is high without treatment (up to 50% in diabetics). Early diagnosis and aggressive therapy are critical.
+                <strong>⚠️ Critical Note:</strong> Without treatment, mortality approaches 50% in diabetic patients. Mortality increases significantly with cranial nerve involvement (up to 90% if multiple CNs affected). Early diagnosis, aggressive systemic antibiotics, and tight glycemic control are essential to prevent progression to intracranial disease and death.
             </div>
         </section>
 
