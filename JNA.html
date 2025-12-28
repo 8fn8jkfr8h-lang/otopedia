@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvenile Nasopharyngeal Angiofibroma: Clinical Masterclass</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="text-slate-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="w-full md:w-64 bg-slate-900 text-slate-300 flex-shrink-0 sticky top-0 md:h-screen overflow-y-auto z-50">
+            <div class="p-6 border-b border-slate-700">
+                <h1 class="text-xl font-bold text-teal-400">Otopedia<br><span class="text-white text-lg font-light">JNA Masterclass</span></h1>
+                <p class="text-xs mt-2 text-slate-400">For Medical Professionals</p>
+            </div>
+            <ul class="py-4 space-y-1">
+                <li><button onclick="scrollToSection('overview')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3 active"><i class="fas fa-microscope w-5"></i> Overview & Epi</button></li>
+                <li><button onclick="scrollToSection('pathogenesis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-dna w-5"></i> Pathogenesis</button></li>
+                <li><button onclick="scrollToSection('presentation')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-user-md w-5"></i> Presentation</button></li>
+                <li><button onclick="scrollToSection('diagnosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-stethoscope w-5"></i> Diagnosis</button></li>
+                <li><button onclick="scrollToSection('staging')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-layer-group w-5"></i> Staging</button></li>
+                <li><button onclick="scrollToSection('management')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-procedures w-5"></i> Management</button></li>
+                <li><button onclick="scrollToSection('prognosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-chart-line w-5"></i> Prognosis</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-screen scroll-smooth" id="main-content">
+            
+            <!-- Hero Header -->
+            <header class="mb-12 border-b pb-6 border-slate-200">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <a href="index.html" class="text-teal-600 hover:text-teal-800 text-sm inline-block mb-2">&larr; Back to Home</a>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Juvenile Nasopharyngeal Angiofibroma</h2>
+                        <p class="text-xl text-teal-700 font-medium italic">"JNA / Nasopharyngeal Angiofibroma"</p>
+                    </div>
+                    <div class="hidden md:block text-right">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-red-400">Highly Vascular Tumor</span>
+                        <p class="text-sm text-slate-500 mt-1">ICD-10: D10.6</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r shadow-sm">
+                    <p class="text-sm md:text-base text-teal-900">
+                        <strong>Faculty Note:</strong> JNA is a histologically benign but clinically aggressive, highly vascular tumor occurring almost exclusively in adolescent males. Characterized by extreme vascularity and a tendency for local invasion. <strong>CRITICAL:</strong> Never biopsy a suspected JNA in an office setting.
+                    </p>
+                </div>
+            </header>
+
+            <div id="content-sections">
+                <!-- SECTION 1: EPIDEMIOLOGY -->
+                <section id="overview" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">1</span> 
+                        Epidemiology & Demographics
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Text Content -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                                <h4 class="font-bold text-lg text-teal-700 mb-3">Key Statistics</h4>
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside">
+                                    <li><strong>Incidence:</strong> 0.05% - 0.5% of all head and neck tumors.</li>
+                                    <li><strong>Population Rate:</strong> 1 in 150,000 to 1 in 600,000 individuals.</li>
+                                    <li><strong>Gender:</strong> Nearly 100% Male predominance.</li>
+                                    <li><strong>Median Age:</strong> 14–15 years (Range: 9–25).</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                                <h4 class="font-bold text-lg text-teal-700 mb-3">Risk Factors & Associations</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3 p-3 bg-yellow-50 rounded border border-yellow-100">
+                                        <i class="fas fa-dna text-yellow-600 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-bold text-yellow-800">Gardner Syndrome / FAP</p>
+                                            <p class="text-xs text-yellow-700">25-fold increased risk in patients with Familial Adenomatous Polyposis.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-3 bg-teal-50 rounded border border-teal-100">
+                                        <i class="fas fa-globe text-teal-600 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-bold text-teal-800">Geographic Variation</p>
+                                            <p class="text-xs text-teal-700">Higher incidence in India, Egypt, and Southeast Asia.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">Age Distribution at Presentation</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Peak incidence occurs during adolescent puberty.</p>
+                            <div class="chart-container h-64 relative">
+                                <canvas id="ageChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: PATHOGENESIS -->
+                <section id="pathogenesis" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">2</span> 
+                        Pathogenesis & Molecular Profile
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-teal-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-vial text-teal-500 mr-2"></i>Hormonal Influence</h4>
+                            <p class="text-sm text-slate-600">Growth is fueled by testosterone. High expression of Androgen Receptors (AR). Estrogen/Progesterone receptors usually absent.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-blue-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-fingerprint text-blue-500 mr-2"></i>Genetic Markers</h4>
+                            <p class="text-sm text-slate-600">Frequent mutations in Wnt/β-catenin pathway. Loss of chromosomes 8, 17, Y; Gain of X, 4, 6, 8.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-purple-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-chart-network text-purple-500 mr-2"></i>Growth Factors</h4>
+                            <p class="text-sm text-slate-600">High expression of VEGF and TGF-β contributes to intense neovascularization and tumor growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-lg text-slate-300 shadow-lg">
+                        <h4 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fas fa-microscope text-teal-400"></i> Histopathological Characteristics</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h5 class="text-teal-400 font-bold text-sm mb-2 uppercase tracking-wider">Vascular Component</h5>
+                                <p class="text-sm">Rich network of endothelium-lined channels. <strong>Crucial:</strong> These vessels lack a muscular coat (tunica media), explaining the inability to vasoconstrict and the risk of massive hemorrhage.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-teal-400 font-bold text-sm mb-2 uppercase tracking-wider">Stromal Component</h5>
+                                <p class="text-sm">Dense fibrous stroma with spindle-shaped or stellate fibroblasts. Non-encapsulated growth allows for finger-like projections into adjacent spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: CLINICAL PRESENTATION -->
+                <section id="presentation" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">3</span> 
+                        Clinical Presentation
+                    </h3>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 mb-8">
+                        <h4 class="font-bold text-xl text-teal-700 mb-6 text-center">The Classic Diagnostic Triad</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-100">
+                                    <i class="fas fa-head-side-mask text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800">Unilateral Obstruction</h5>
+                                <p class="text-xs text-slate-500 mt-1">Present in 80-90% of cases. Progressive and painless.</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-100">
+                                    <i class="fas fa-tint text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800">Recurrent Epistaxis</h5>
+                                <p class="text-xs text-slate-500 mt-1">Profuse, painless, and typically unilateral (45-60%).</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-teal-100">
+                                    <i class="fas fa-search text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800">Nasopharyngeal Mass</h5>
+                                <p class="text-xs text-slate-500 mt-1">Visible on endoscopy as a lobulated, rubbery, reddish mass.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg border border-slate-100 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-list-ul text-teal-500"></i> Symptom Prevalence</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm border-b pb-2">
+                                    <span class="text-slate-600">Headache (Sinus Obstruction)</span>
+                                    <span class="font-bold text-slate-800">25%</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm border-b pb-2">
+                                    <span class="text-slate-600">Facial Swelling (ITF Involvement)</span>
+                                    <span class="font-bold text-slate-800">10-15%</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm border-b pb-2">
+                                    <span class="text-slate-600">Proptosis (Orbital Extension)</span>
+                                    <span class="font-bold text-slate-800">10-15%</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-slate-600">Hyponasal Speech</span>
+                                    <span class="font-bold text-slate-800">5-10%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded shadow-sm">
+                                <h5 class="font-bold text-yellow-800 text-sm mb-1">Clinical Pearl: Otoscopy</h5>
+                                <p class="text-xs text-yellow-900">Always perform otoscopy. JNA often presents with unilateral serous otitis media due to Eustachian tube dysfunction from mass effect.</p>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded shadow-sm">
+                                <h5 class="font-bold text-blue-800 text-sm mb-1">Inspection Tip</h5>
+                                <p class="text-xs text-blue-900">Look for cheek fullness (frog-face deformity) in advanced stages, indicating massive expansion into the infratemporal fossa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: DIAGNOSTIC WORKUP -->
+                <section id="diagnosis" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">4</span> 
+                        Diagnostic Workup
+                    </h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-blue-500 shadow-sm relative">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-camera text-blue-500 mr-2"></i>Contrast-Enhanced CT</h4>
+                            <p class="text-sm text-slate-600 mb-3">Essential for evaluating bony erosion and the skull base.</p>
+                            <div class="bg-blue-50 p-3 rounded text-[11px] text-blue-800 font-bold border border-blue-100">
+                                <i class="fas fa-star mr-1"></i> HOLMAN-MILLER SIGN: Anterior bowing of the posterior maxillary sinus wall.
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-teal-500 shadow-sm relative">
+                            <span class="absolute top-2 right-2 bg-teal-100 text-teal-800 text-[10px] font-bold px-1.5 py-0.5 rounded">GOLD STANDARD</span>
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-magnet text-teal-500 mr-2"></i>MRI with Gadolinium</h4>
+                            <p class="text-sm text-slate-600 mb-3">Superior for soft tissue and intracranial extension evaluation.</p>
+                            <p class="text-xs text-slate-500 italic">"Salt and pepper" appearance (flow voids) on T2-weighted images.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-purple-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-syringe text-purple-500 mr-2"></i>Biopsy (Warning)</h4>
+                            <p class="text-sm text-slate-600 mb-3">Office biopsy is strictly contraindicated.</p>
+                            <div class="bg-red-50 p-3 rounded text-[11px] text-red-800 font-bold border border-red-100">
+                                <i class="fas fa-exclamation-triangle mr-1"></i> RISK OF MASSIVE HEMORRHAGE. Defer until definitive surgery.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-100 p-6 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-project-diagram text-teal-500"></i> Digital Subtraction Angiography (DSA)</h4>
+                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            <div class="flex-1">
+                                <p class="text-sm text-slate-600">Critical for mapping the blood supply and performing <strong>Preoperative Embolization</strong>.</p>
+                                <ul class="mt-3 space-y-2 text-xs text-slate-500">
+                                    <li><i class="fas fa-caret-right mr-1 text-teal-500"></i> Primary supply: Internal Maxillary Artery (IMA).</li>
+                                    <li><i class="fas fa-caret-right mr-1 text-teal-500"></i> Potential supply: Ascending pharyngeal or branches of ICA.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-center">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Embolization Goal</p>
+                                <p class="text-lg font-black text-teal-600">60 - 80%</p>
+                                <p class="text-[10px] text-slate-500">Reduction in Blood Loss</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: STAGING & CLASSIFICATION -->
+                <section id="staging" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">5</span> 
+                        Staging & Classification
+                    </h3>
+                    
+                    <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p class="text-sm text-slate-500">Fisch and Radkowski are the primary systems. Radkowski is preferred for surgical planning.</p>
+                            <div class="flex bg-slate-200 rounded p-1">
+                                <button onclick="switchSystem('fisch')" id="tab-fisch" class="px-4 py-1.5 rounded text-sm font-semibold bg-white text-slate-800 shadow-sm transition-all">Fisch System</button>
+                                <button onclick="switchSystem('radkowski')" id="tab-radkowski" class="px-4 py-1.5 rounded text-sm font-medium text-slate-600 hover:text-slate-800 transition-all">Radkowski System</button>
+                            </div>
+                        </div>
+
+                        <div class="p-6 md:p-8">
+                            <div id="staging-container" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                                <div id="stage-controls" class="md:col-span-4 flex flex-col space-y-2">
+                                    <!-- Controls injected by JS -->
+                                </div>
+                                <div class="md:col-span-8 bg-slate-50 rounded-lg p-6 border border-slate-200" id="stage-display">
+                                    <!-- Display injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: MANAGEMENT ALGORITHM -->
+                <section id="management" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">6</span> 
+                        Management Algorithm
+                    </h3>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 mb-8">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div class="flex-1 space-y-4">
+                                <div class="p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+                                    <h5 class="font-bold text-blue-800 text-sm">1. Preoperative Prep</h5>
+                                    <p class="text-xs text-blue-700">DSA + Embolization within 24–48h of surgery to minimize blood loss.</p>
+                                </div>
+                                <div class="p-4 bg-teal-50 border-l-4 border-teal-500 rounded">
+                                    <h5 class="font-bold text-teal-800 text-sm">2. Primary Surgery (EEA)</h5>
+                                    <p class="text-xs text-teal-700">Endoscopic Endonasal Approach is the gold standard for most Fisch I-III tumors.</p>
+                                </div>
+                                <div class="p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
+                                    <h5 class="font-bold text-purple-800 text-sm">3. External Approaches</h5>
+                                    <p class="text-xs text-purple-700">Weber-Fergusson or Craniofacial resection for massive intracranial extension.</p>
+                                </div>
+                            </div>
+                            <div class="hidden lg:block border-l-2 border-dashed border-slate-200 h-48 mx-8"></div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 flex-1">
+                                <h4 class="font-bold text-slate-800 mb-3 text-center">Second-Line / Adjuncts</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-radiation text-orange-500 mt-0.5"></i>
+                                        <span><strong>Radiotherapy:</strong> (30-45 Gy) for inoperable, residual, or recurrent disease.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-pills text-teal-500 mt-0.5"></i>
+                                        <span><strong>Medical Therapy:</strong> Hormonal blockers (e.g., Flutamide) show mixed results.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-search-plus text-blue-500 mt-0.5"></i>
+                                        <span><strong>Surveillance:</strong> MRI every 6 months for 2 years, then annually for 5 years.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-exclamation-circle text-red-600 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-red-800 text-sm">Critical Warning: Hemorrhage</h5>
+                                    <p class="text-xs text-red-900">Intraoperative blood loss can exceed 2-3 Liters without proper embolization. Always have blood products available.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-lightbulb text-teal-600 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-teal-800 text-sm">Trend Watch: Endoscopic First</h5>
+                                    <p class="text-xs text-teal-900">Modern endoscopic techniques have significantly reduced morbidity, even for tumors with moderate intracranial extension.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </section>
+
+                <!-- SECTION 7: PROGNOSIS & OUTCOMES -->
+                <section id="prognosis" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">7</span> 
+                        Prognosis & Outcomes
+                    </h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">Recurrence Rate by Stage (Radkowski)</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Advanced stages involving the skull base significantly increase recurrence risk.</p>
+                            <div class="chart-container h-64 relative">
+                                <canvas id="recurrenceChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 text-center">
+                                    <span class="block text-3xl font-bold text-teal-600">~100%</span>
+                                    <span class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Overall Survival</span>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 text-center">
+                                    <span class="block text-3xl font-bold text-red-600">10-20%</span>
+                                    <span class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Avg Recurrence</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-900 p-6 rounded-lg text-white shadow-lg">
+                                <h4 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-chart-line text-teal-400"></i> Prognostic Factors</h4>
+                                <div class="grid grid-cols-2 gap-4 text-xs">
+                                    <div class="space-y-2">
+                                        <p class="text-teal-400 font-bold uppercase tracking-widest">Favorable</p>
+                                        <ul class="space-y-1 text-slate-300">
+                                            <li><i class="fas fa-plus-circle text-green-500 mr-1"></i> Total Resection</li>
+                                            <li><i class="fas fa-plus-circle text-green-500 mr-1"></i> Successful Embolization</li>
+                                            <li><i class="fas fa-plus-circle text-green-500 mr-1"></i> Age > 15 Years</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <p class="text-red-400 font-bold uppercase tracking-widest">Adverse</p>
+                                        <ul class="space-y-1 text-slate-300">
+                                            <li><i class="fas fa-minus-circle text-red-500 mr-1"></i> Intracranial Extension</li>
+                                            <li><i class="fas fa-minus-circle text-red-500 mr-1"></i> ICA Involvement</li>
+                                            <li><i class="fas fa-minus-circle text-red-500 mr-1"></i> Age < 15 Years</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-slate-50 rounded border border-slate-200 text-xs text-slate-600 italic">
+                        <strong>Surveillance Protocol:</strong> Follow-up MRI every 6 months for 2 years, then annually for at least 5 years. Most recurrences occur within 12–18 months.
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer Disclaimer -->
+            <footer class="mt-16 pt-8 border-t border-slate-200 text-slate-500 text-sm">
+                <p class="mb-4">© 2025 Otopedia Clinical Reference. For educational purposes only.</p>
+                <div class="bg-slate-50 p-4 rounded border border-slate-200 text-xs italic">
+                    <strong>Disclaimer:</strong> This content is intended for medical professionals only. The information provided is for educational purposes and does not constitute medical advice, diagnosis, or treatment. Clinical judgment should always be exercised.
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initScrollSpy();
+            initAgeChart();
+            initRecurrenceChart();
+            switchSystem('fisch');
+        });
+
+        const stagingSystems = {
+            fisch: [
+                { id: 'f1', label: 'Stage I', sub: 'Nasopharynx & Nasal Cavity', title: 'Stage I: Localized Disease', content: 'Tumor is strictly limited to the nasopharynx and nasal cavity. No bone destruction is evident on imaging.', implication: 'Endoscopic Resection (EEA)', risk: 'Minimal Recurrence' },
+                { id: 'f2', label: 'Stage II', sub: 'Sinus & PPF Invasion', title: 'Stage II: Local Extension', content: 'Invasion into the pterygopalatine fossa, or the maxillary, ethmoid, or sphenoid sinuses. Accompanied by bone destruction.', implication: 'Endoscopic Resection (EEA)', risk: 'Low Recurrence' },
+                { id: 'f3', label: 'Stage III', sub: 'ITF & Orbit (Extradural)', title: 'Stage III: Regional Expansion', content: 'Invasion into the infratemporal fossa, orbit, or parasellar region. Critically, this extension remains extradural.', implication: 'EEA or External Approach', risk: 'Increased Recurrence' },
+                { id: 'f4', label: 'Stage IV', sub: 'Intradural Extension', title: 'Stage IV: Advanced Intracranial', content: 'Intradural extension involving the cavernous sinus, pituitary fossa, or optic chiasm. Represents high surgical complexity.', implication: 'Combined Craniofacial Approach', risk: 'High Recurrence (up to 40%)' }
+            ],
+            radkowski: [
+                { id: 'r1a', label: 'Stage Ia', sub: 'Nose & Nasopharynx Only', title: 'Stage Ia: Nasal Limitation', content: 'Tumor is limited to the nose and nasopharynx. No sinus involvement.', implication: 'Standard EEA', risk: '< 5% Recurrence' },
+                { id: 'r1b', label: 'Stage Ib', sub: 'Sinus Extension', title: 'Stage Ib: Sinus Involvement', content: 'Extension into at least one of the paranasal sinuses.', implication: 'Standard EEA', risk: '< 5% Recurrence' },
+                { id: 'r2a', label: 'Stage IIa', sub: 'Minimal PPF Extension', title: 'Stage IIa: Through SPF', content: 'Minimal extension through the sphenopalatine foramen (SPF) into the pterygopalatine fossa (PPF).', implication: 'EEA with SPF extension', risk: '10-15% Recurrence' },
+                { id: 'r2b', label: 'Stage IIb', sub: 'Full PPF Occupation', title: 'Stage IIb: PPF Dominance', content: 'Full occupation of the pterygopalatine fossa with displacement of the maxillary sinus wall (Holman-Miller sign).', implication: 'Aggressive EEA', risk: '10-15% Recurrence' },
+                { id: 'r2c', label: 'Stage IIc', sub: 'ITF Extension', title: 'Stage IIc: Infratemporal Extension', content: 'Extension through the PPF into the infratemporal fossa or posterior to the pterygoid plates.', implication: 'EEA or External Approach', risk: '15% Recurrence' },
+                { id: 'r3a', label: 'Stage IIIa', sub: 'Minimal Skull Base Erosion', title: 'Stage IIIa: Base Erosion', content: 'Minimal skull base erosion and minimal extradural intracranial extension.', implication: 'Skull Base EEA', risk: '30-45% Recurrence' },
+                { id: 'r3b', label: 'Stage IIIb', sub: 'Extensive Intracranial', title: 'Stage IIIb: Cavernous/Intracranial', content: 'Extensive intracranial extension with or without cavernous sinus invasion.', implication: 'Combined Approach', risk: '45% Recurrence' }
+            ]
+        };
+
+        let currentSystem = 'fisch';
+
+        function switchSystem(system) {
+            currentSystem = system;
+            const tabs = { fisch: document.getElementById('tab-fisch'), radkowski: document.getElementById('tab-radkowski') };
+            
+            Object.keys(tabs).forEach(k => {
+                if (tabs[k]) {
+                    tabs[k].className = 'px-4 py-1.5 rounded text-sm transition-all ' + 
+                        (k === system ? 'font-semibold bg-white text-slate-800 shadow-sm' : 'font-medium text-slate-600 hover:text-slate-800');
+                }
+            });
+
+            renderControls();
+            renderStage(stagingSystems[system][0].id);
+        }
+
+        function renderControls() {
+            const container = document.getElementById('stage-controls');
+            container.innerHTML = stagingSystems[currentSystem].map(s => `
+                <button onclick="renderStage('${s.id}')" id="btn-${s.id}" class="stage-btn text-left p-4 rounded border-2 transition-all">
+                    <span class="font-bold block">${s.label}</span>
+                    <span class="text-xs font-normal opacity-70">${s.sub}</span>
+                </button>
+            `).join('');
+        }
+
+        function renderStage(id) {
+            const stage = stagingSystems[currentSystem].find(s => s.id === id);
+            const display = document.getElementById('stage-display');
+            
+            display.innerHTML = `
+                <h4 class="text-xl font-bold text-slate-800 mb-2">${stage.title}</h4>
+                <p class="text-slate-600 mb-4 text-sm">${stage.content}</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-3 rounded shadow-sm border-l-4 border-teal-500">
+                        <span class="text-[10px] uppercase font-bold text-slate-400">Clinical Implication</span>
+                        <p class="text-xs font-semibold">${stage.implication}</p>
+                    </div>
+                    <div class="bg-white p-3 rounded shadow-sm border-l-4 border-teal-500">
+                        <span class="text-[10px] uppercase font-bold text-slate-400">Recurrence Risk</span>
+                        <p class="text-xs font-semibold">${stage.risk}</p>
+                    </div>
+                </div>
+            `;
+
+            document.querySelectorAll('.stage-btn').forEach(btn => {
+                btn.className = 'stage-btn text-left p-4 rounded border-2 transition-all border-transparent hover:bg-slate-50 text-slate-600';
+            });
+            const activeBtn = document.getElementById(`btn-${id}`);
+            if (activeBtn) {
+                activeBtn.className = 'stage-btn text-left p-4 rounded border-2 transition-all border-teal-500 bg-teal-50 font-bold text-teal-800';
+            }
+        }
+
+        function initAgeChart() {
+            const ctx = document.getElementById('ageChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['0-9', '10-14', '15-19', '20-25', '25+'],
+                    datasets: [{
+                        label: 'Prevalence (%)',
+                        data: [5, 40, 45, 8, 2],
+                        backgroundColor: '#0d9488',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Percentage (%)', font: { size: 10 } } },
+                        x: { title: { display: true, text: 'Age Group (Years)', font: { size: 10 } } }
+                    }
+                }
+            });
+        }
+
+        function initRecurrenceChart() {
+            const ctx = document.getElementById('recurrenceChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Stage I', 'Stage II', 'Stage III'],
+                    datasets: [{
+                        data: [5, 15, 45],
+                        backgroundColor: ['#2dd4bf', '#0d9488', '#0f766e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
+                    }
+                }
+            });
+        }
+
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        navItems.forEach(item => {
+                            item.classList.remove('active', 'bg-slate-800', 'text-white');
+                            item.classList.add('text-slate-300');
+                            
+                            if (item.getAttribute('onclick').includes(id)) {
+                                item.classList.add('active', 'bg-slate-800', 'text-white');
+                                item.classList.remove('text-slate-300');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
+    </script>
+</body>
+</html>
