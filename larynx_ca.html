@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laryngeal Carcinoma: Clinical Masterclass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="text-slate-800">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="w-full md:w-64 bg-slate-900 text-slate-300 flex-shrink-0 sticky top-0 md:h-screen overflow-y-auto z-50">
+            <div class="p-6 border-b border-slate-700">
+                <h1 class="text-xl font-bold text-teal-400">Laryngeal<br><span class="text-white text-lg font-light">Cancer</span></h1>
+                <p class="text-xs mt-2 text-slate-400">For Medical Professionals</p>
+            </div>
+            <ul class="py-4 space-y-1">
+                <li><button onclick="scrollToSection('overview')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3 active"><i class="fas fa-chart-bar w-5"></i> Overview & Epi</button></li>
+                <li><button onclick="scrollToSection('etiology')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-warning w-5"></i> Etiology</button></li>
+                <li><button onclick="scrollToSection('clinical')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-stethoscope w-5"></i> Clinical</button></li>
+                <li><button onclick="scrollToSection('diagnosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-microscope w-5"></i> Diagnosis</button></li>
+                <li><button onclick="scrollToSection('staging')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-layer-group w-5"></i> Staging</button></li>
+                <li><button onclick="scrollToSection('management')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-procedures w-5"></i> Management</button></li>
+                <li><button onclick="scrollToSection('prognosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-chart-line w-5"></i> Prognosis</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto h-screen scroll-smooth" id="main-content">
+            
+            <!-- Hero Header -->
+            <header class="mb-12 border-b pb-6 border-slate-200">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <a href="index.html" class="text-teal-600 hover:text-teal-800 text-sm inline-block mb-2">&larr; Back to Home</a>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Laryngeal Carcinoma</h2>
+                        <p class="text-xl text-teal-700 font-medium italic">"Laryngeal Squamous Cell Carcinoma (LSCC)"</p>
+                    </div>
+                    <div class="hidden md:block text-right">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-red-400 block mb-2">HNSCC Malignancy</span>
+                        <p class="text-sm text-slate-500">ICD-10: C32.0-C32.9</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm">
+                    <p class="text-sm md:text-base text-blue-900">
+                        <strong>Faculty Note:</strong> Laryngeal cancer is the most common head and neck malignancy. Early-stage glottic cancers present with hoarseness and have excellent prognosis (>80% 5-year survival). Supraglottic tumors are clinically silent and present late. TNM staging, tumor site, and HPV status guide multimodal treatment: early stages favor single-modality (surgery or RT), advanced stages require concurrent chemoradiotherapy or laryngectomy.
+                    </p>
+                </div>
+            </header>
+
+            <!-- SECTION 1: OVERVIEW & EPIDEMIOLOGY -->
+            <section id="overview" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">1</span> 
+                    Epidemiology & Demographics
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Text Content -->
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Key Epidemiologic Data</h4>
+                            <ul class="space-y-3 text-slate-600 list-disc list-inside text-sm">
+                                <li><strong>Annual Incidence (US 2025):</strong> ~13,020 new cases</li>
+                                <li><strong>Annual Mortality:</strong> ~3,910 deaths</li>
+                                <li><strong>Gender Ratio:</strong> Male 4-5:1</li>
+                                <li><strong>Peak Age:</strong> 6th-7th decades (median 66 years)</li>
+                                <li><strong>Geographic:</strong> Higher in Southern/Eastern Europe, South America</li>
+                                <li><strong>Trend:</strong> Declining 2-3% annually in developed nations (↓ tobacco use)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-3">Anatomical Subsites</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="p-3 bg-blue-50 rounded border-l-4 border-blue-500">
+                                    <strong class="text-blue-800">Glottis (True Vocal Cords)</strong>
+                                    <p class="text-slate-600">Sparse lymphatic drainage → early symptoms → better prognosis</p>
+                                </div>
+                                <div class="p-3 bg-yellow-50 rounded border-l-4 border-yellow-500">
+                                    <strong class="text-yellow-800">Supraglottis (Epiglottis, AE folds)</strong>
+                                    <p class="text-slate-600">Rich lymphatics → silent growth → late presentation</p>
+                                </div>
+                                <div class="p-3 bg-orange-50 rounded border-l-4 border-orange-500">
+                                    <strong class="text-orange-800">Subglottis</strong>
+                                    <p class="text-slate-600">Rare, presents late with stridor/dyspnea</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">Age Distribution at Diagnosis</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Peak incidence in 6th-7th decades</p>
+                            <div style="height: 300px;">
+                                <canvas id="ageChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">5-Year Survival by Stage</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Glottic vs. Supraglottic</p>
+                            <div style="height: 250px;">
+                                <canvas id="survivalChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: ETIOLOGY & PATHOGENESIS -->
+            <section id="etiology" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">2</span> 
+                    Etiology & Pathogenesis
+                </h3>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-4">Primary Risk Factors</h4>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-red-50 rounded border-l-4 border-red-600">
+                                    <div class="font-bold text-red-800 mb-1">Tobacco</div>
+                                    <p class="text-sm text-slate-700">Most significant risk factor. Dose-dependent (pack-years).</p>
+                                </div>
+                                <div class="p-4 bg-red-50 rounded border-l-4 border-red-600">
+                                    <div class="font-bold text-red-800 mb-1">Alcohol</div>
+                                    <p class="text-sm text-slate-700">Synergistic with tobacco (multiplies risk up to 100-fold).</p>
+                                </div>
+                                <div class="p-4 bg-orange-50 rounded border-l-4 border-orange-600">
+                                    <div class="font-bold text-orange-800 mb-1">HPV (16/18)</div>
+                                    <p class="text-sm text-slate-700">~20-25% of laryngeal cancers. Less prognostically significant than in oropharynx.</p>
+                                </div>
+                                <div class="p-4 bg-orange-50 rounded border-l-4 border-orange-600">
+                                    <div class="font-bold text-orange-800 mb-1">Other</div>
+                                    <p class="text-sm text-slate-700">LPR, occupational (asbestos, wood dust, paint fumes, mustard gas).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-4">Molecular Alterations</h4>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-50 rounded">
+                                    <span class="inline-block bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded mb-2">TP53</span>
+                                    <p class="text-sm">Loss of tumor suppressor gene (very common in smoking-related SCC)</p>
+                                </div>
+                                <div class="p-4 bg-slate-50 rounded">
+                                    <span class="inline-block bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded mb-2">EGFR</span>
+                                    <p class="text-sm">Overexpression of Epidermal Growth Factor Receptor</p>
+                                </div>
+                                <div class="p-4 bg-slate-50 rounded">
+                                    <span class="inline-block bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded mb-2">p16</span>
+                                    <p class="text-sm">Inactivation in HPV-negative tumors</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r">
+                            <div class="flex gap-2">
+                                <i class="fas fa-lightbulb text-yellow-600 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <p class="font-semibold text-yellow-900 text-sm">Clinical Pearl</p>
+                                    <p class="text-xs text-yellow-800 mt-1"><strong>Field Cancerization:</strong> High-risk for synchronous primaries in lung/esophagus due to widespread mucosal damage from smoke. Panendoscopy recommended.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-lg text-teal-700 mb-4">Risk Multiplier: Alcohol + Tobacco Synergy</h4>
+                    <div style="height: 300px;">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CLINICAL PRESENTATION -->
+            <section id="clinical" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">3</span> 
+                    Clinical Presentation
+                </h3>
+
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Cardinal Symptoms by Subsite</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-300">
+                                        <th class="text-left py-2 px-3 font-bold text-teal-700">Subsite</th>
+                                        <th class="text-left py-2 px-3 font-bold text-teal-700">Early Symptoms</th>
+                                        <th class="text-left py-2 px-3 font-bold text-teal-700">Late Symptoms</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                        <td class="py-3 px-3 font-semibold text-blue-700">Glottis</td>
+                                        <td class="py-3 px-3"><strong>Hoarseness</strong> (persistent &gt;3 weeks)</td>
+                                        <td class="py-3 px-3">Stridor, airway obstruction</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                        <td class="py-3 px-3 font-semibold text-yellow-700">Supraglottis</td>
+                                        <td class="py-3 px-3">Vague throat discomfort, sensation of FB</td>
+                                        <td class="py-3 px-3"><strong>Dysphagia, Odynophagia, Referred Otalgia</strong></td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="py-3 px-3 font-semibold text-orange-700">Subglottis</td>
+                                        <td class="py-3 px-3">Rare to have early symptoms</td>
+                                        <td class="py-3 px-3">Stridor, dyspnea (often Stage III/IV)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-lg text-teal-700 mb-4">Physical Exam Findings</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex gap-2"><i class="fas fa-check text-teal-600"></i> Neck mass (metastatic lymphadenopathy)</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-teal-600"></i> Loss of laryngeal crepitus (click) → post-cricoid invasion</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-teal-600"></i> <strong>Flexible laryngoscopy:</strong> Ulcerative/exophytic mass</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-teal-600"></i> Leukoplakia or erythroplakia patches</li>
+                                <li class="flex gap-2"><i class="fas fa-check text-teal-600"></i> <strong>Impaired vocal cord mobility or fixation</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r">
+                            <div class="flex gap-2">
+                                <i class="fas fa-exclamation-circle text-red-600 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <p class="font-semibold text-red-900">Red Flag: Referred Otalgia</p>
+                                    <p class="text-xs text-red-800 mt-1">Patient with normal ears but severe ear pain must have flexible laryngoscopy to rule out supraglottic/piriform sinus cancer (CN X shared innervation).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: DIAGNOSTIC WORKUP -->
+            <section id="diagnosis" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">4</span> 
+                    Diagnostic Workup
+                </h3>
+
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-ct text-blue-600 text-lg"></i>
+                                <h4 class="font-bold text-blue-800">CT Neck with Contrast</h4>
+                            </div>
+                            <p class="text-xs text-blue-700 mb-2"><strong>First-line imaging</strong></p>
+                            <p class="text-xs text-slate-600">• Cartilage invasion (erosion/sclerosis)<br>• Paraglottic space invasion<br>• Lymphadenopathy<br>• Skull base to diaphragm</p>
+                        </div>
+
+                        <div class="bg-teal-50 border-l-4 border-teal-600 p-4 rounded-r">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-brain text-teal-600 text-lg"></i>
+                                <h4 class="font-bold text-teal-800">MRI Neck</h4>
+                            </div>
+                            <p class="text-xs text-teal-700 mb-2"><strong>Superior soft tissue</strong></p>
+                            <p class="text-xs text-slate-600">• Soft tissue delineation<br>• Tongue base involvement<br>• Perineural spread<br>• If CT contraindicated</p>
+                        </div>
+
+                        <div class="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-microscope text-purple-600 text-lg"></i>
+                                <h4 class="font-bold text-purple-800">Direct Laryngoscopy & Biopsy</h4>
+                            </div>
+                            <p class="text-xs text-purple-700 mb-2"><strong>Gold standard diagnosis</strong></p>
+                            <p class="text-xs text-slate-600">• Under general anesthesia<br>• Panendoscopy: ESO/Broncho<br>• Rule out synchronous primaries (15% risk)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Differential Diagnosis</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                            <div class="p-3 bg-slate-50 rounded"><strong class="text-slate-700">Laryngeal Papillomatosis</strong> — Benign, viral</div>
+                            <div class="p-3 bg-slate-50 rounded"><strong class="text-slate-700">Vocal Cord Nodules/Polyps</strong> — Benign, trauma</div>
+                            <div class="p-3 bg-slate-50 rounded"><strong class="text-slate-700">Laryngeal TB</strong> — Infectious</div>
+                            <div class="p-3 bg-slate-50 rounded"><strong class="text-slate-700">Granulomatosis with Polyangiitis</strong> — Autoimmune</div>
+                            <div class="p-3 bg-slate-50 rounded"><strong class="text-slate-700">Chondrosarcoma</strong> — Rare cartilage malignancy</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
+                        <p class="font-semibold text-blue-900 text-sm mb-1">PET-CT Indication</p>
+                        <p class="text-xs text-blue-800">Indicated for Stage III/IV to rule out distant metastases or synchronous second primary tumors.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: STAGING (TNM) -->
+            <section id="staging" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">5</span> 
+                    TNM Staging (AJCC 8th Edition)
+                </h3>
+
+                <div class="space-y-6">
+                    <!-- T Staging -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Primary Tumor (T) Staging</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs md:text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-300 bg-slate-50">
+                                        <th class="text-left py-2 px-3 font-bold text-slate-700">Stage</th>
+                                        <th class="text-left py-2 px-3 font-bold text-slate-700">Glottic Definition</th>
+                                        <th class="text-left py-2 px-3 font-bold text-slate-700">Supraglottic Definition</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="py-2 px-3 font-bold">Tis</td>
+                                        <td class="py-2 px-3">Carcinoma in situ</td>
+                                        <td class="py-2 px-3">Carcinoma in situ</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="py-2 px-3 font-bold">T1</td>
+                                        <td class="py-2 px-3">Limited to cord(s), normal mobility<br><span class="text-xs text-slate-500">T1a: One cord / T1b: Both cords</span></td>
+                                        <td class="py-2 px-3">Limited to one supraglottic subsite, normal mobility</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="py-2 px-3 font-bold">T2</td>
+                                        <td class="py-2 px-3">Extends to supra/subglottis OR <strong>impaired mobility</strong> (not fixed)</td>
+                                        <td class="py-2 px-3">Invades adjacent subsite or glottis, mobility normal/impaired</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="py-2 px-3 font-bold">T3</td>
+                                        <td class="py-2 px-3"><strong>Vocal cord fixation</strong> OR paraglottic space/thyroid cartilage inner cortex invasion</td>
+                                        <td class="py-2 px-3">Same as glottic</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="py-2 px-3 font-bold">T4a</td>
+                                        <td class="py-2 px-3"><strong>Resectable:</strong> Through thyroid cartilage, trachea, esophagus, strap muscles</td>
+                                        <td class="py-2 px-3">Same</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-bold">T4b</td>
+                                        <td class="py-2 px-3"><strong>Unresectable:</strong> Carotid encasement, prevertebral space, mediastinum</td>
+                                        <td class="py-2 px-3">Same</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- N Staging -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Nodal Staging (N) - Clinical</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-slate-50 rounded border-t-4 border-yellow-500">
+                                <p class="font-bold text-yellow-700 mb-2">N1</p>
+                                <p class="text-sm text-slate-700">Single ipsilateral node ≤3 cm</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded border-t-4 border-orange-500">
+                                <p class="font-bold text-orange-700 mb-2">N2</p>
+                                <p class="text-sm text-slate-700">Multiple nodes or >3 but ≤6 cm</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded border-t-4 border-red-500">
+                                <p class="font-bold text-red-700 mb-2">N3</p>
+                                <p class="text-sm text-slate-700">Node >6 cm OR clinical Extranodal Extension (ENE)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r">
+                        <div class="flex gap-2">
+                            <i class="fas fa-exclamation-triangle text-red-600 text-lg flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-red-900 text-sm">Fixation = T3</p>
+                                <p class="text-xs text-red-800 mt-1">If vocal cord is not moving, stage is <strong>at least T3</strong>. This mandates multimodal therapy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: MANAGEMENT ALGORITHM -->
+            <section id="management" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">6</span> 
+                    Management Algorithm
+                </h3>
+
+                <div class="space-y-6">
+                    <!-- Early Stage -->
+                    <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-r">
+                        <h4 class="font-bold text-lg text-green-800 mb-3">Stage I & II: Early Stage</h4>
+                        <p class="text-sm text-slate-700 mb-4"><strong>Goal:</strong> Cure + Organ Preservation (voice quality). Equivalent cure rates ~85-95%.</p>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white rounded border border-green-200">
+                                <p class="font-semibold text-slate-800 text-sm">✓ Transoral Laser Microsurgery (TLM)</p>
+                                <p class="text-xs text-slate-600">CO₂ laser excision. Best for T1a/T1b. Requires single operative session.</p>
+                            </div>
+                            <div class="p-3 bg-white rounded border border-green-200">
+                                <p class="font-semibold text-slate-800 text-sm">✓ Radiation Therapy (RT)</p>
+                                <p class="text-xs text-slate-600">60-70 Gy (IMRT). Preferred if anatomy limits surgical access or patient preference.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Locally Advanced -->
+                    <div class="bg-orange-50 border-l-4 border-orange-600 p-6 rounded-r">
+                        <h4 class="font-bold text-lg text-orange-800 mb-3">Stage III & IVa: Locally Advanced</h4>
+                        <p class="text-sm text-slate-700 mb-4"><strong>Goal:</strong> Cure + Functional preservation if possible.</p>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white rounded border border-orange-200">
+                                <p class="font-semibold text-slate-800 text-sm">🎯 Option 1: Larynx Preservation (Standard of Care)</p>
+                                <p class="text-xs text-slate-600 mt-1"><strong>Concurrent Chemoradiation (CRT):</strong> Cisplatin + RT</p>
+                                <p class="text-xs text-slate-600">If larynx functional (swallowing/breathing preserved) and tumor manageable.</p>
+                            </div>
+                            <div class="p-3 bg-white rounded border border-orange-200">
+                                <p class="font-semibold text-slate-800 text-sm">🎯 Option 2: Surgical Salvage / Primary Surgery</p>
+                                <p class="text-xs text-slate-600 mt-1"><strong>Total Laryngectomy:</strong> Complete voice box removal + permanent tracheostoma</p>
+                                <p class="text-xs text-slate-600">For T4a tumors, non-functional larynx, aspiration risk.</p>
+                                <p class="text-xs text-slate-600"><strong>Rehabilitation:</strong> TEP (Tracheoesophageal Voice Prosthesis), Electrolarynx</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recurrent/Metastatic -->
+                    <div class="bg-red-50 border-l-4 border-red-600 p-6 rounded-r">
+                        <h4 class="font-bold text-lg text-red-800 mb-3">Stage IVb & IVc: Recurrent/Metastatic</h4>
+                        <p class="text-sm text-slate-700 mb-4"><strong>Goal:</strong> Palliative intent, quality of life.</p>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white rounded border border-red-200">
+                                <p class="font-semibold text-slate-800 text-sm">First-Line: Immunotherapy</p>
+                                <p class="text-xs text-slate-600">Pembrolizumab ± Platinum + 5-FU chemotherapy</p>
+                            </div>
+                            <div class="p-3 bg-white rounded border border-red-200">
+                                <p class="font-semibold text-slate-800 text-sm">Second-Line Options</p>
+                                <p class="text-xs text-slate-600">Cetuximab (EGFR inhibitor), Taxanes</p>
+                            </div>
+                            <div class="p-3 bg-white rounded border border-red-200">
+                                <p class="font-semibold text-slate-800 text-sm">Supportive Care</p>
+                                <p class="text-xs text-slate-600">Tracheostomy (airway), G-tube (feeding)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r">
+                        <div class="flex gap-2">
+                            <i class="fas fa-microscope text-teal-600 text-lg flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-teal-900 text-sm">Trend Watch: Emerging Therapies</p>
+                                <p class="text-xs text-teal-800 mt-1">Checkpoint inhibitors (nivolumab, atezolizumab) show promise. HPV+ tumors may respond better to immunotherapy. Targeted therapy based on genomic profiling is under investigation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: PROGNOSIS & OUTCOMES -->
+            <section id="prognosis" class="mb-16 scroll-mt-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">7</span> 
+                    Prognosis & Outcomes
+                </h3>
+
+                <div class="space-y-6">
+                    <!-- Survival Table -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">5-Year Relative Survival Rates (SEER 2014-2020)</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-300 bg-slate-50">
+                                        <th class="text-left py-2 px-3 font-bold text-slate-700">Stage</th>
+                                        <th class="text-center py-2 px-3 font-bold text-slate-700">Glottis</th>
+                                        <th class="text-center py-2 px-3 font-bold text-slate-700">Supraglottis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200 bg-green-50">
+                                        <td class="py-3 px-3 font-semibold text-green-800">Stage I/II (Local)</td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-green-200 text-green-900 font-bold px-2 py-1 rounded">84%</span></td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-green-200 text-green-900 font-bold px-2 py-1 rounded">61%</span></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200 bg-yellow-50">
+                                        <td class="py-3 px-3 font-semibold text-yellow-800">Stage III (Regional)</td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-yellow-200 text-yellow-900 font-bold px-2 py-1 rounded">52%</span></td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-yellow-200 text-yellow-900 font-bold px-2 py-1 rounded">46%</span></td>
+                                    </tr>
+                                    <tr class="bg-red-50">
+                                        <td class="py-3 px-3 font-semibold text-red-800">Stage IV (Distant)</td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-red-200 text-red-900 font-bold px-2 py-1 rounded">17%</span></td>
+                                        <td class="py-3 px-3 text-center"><span class="bg-red-200 text-red-900 font-bold px-2 py-1 rounded">16%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3"><strong>Note:</strong> Glottic cancer has superior prognosis due to early symptom presentation (hoarseness) and sparse lymphatic drainage limiting early nodal spread.</p>
+                    </div>
+
+                    <!-- Prognostic Factors -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r">
+                            <h4 class="font-bold text-red-800 mb-3 flex items-center gap-2">
+                                <i class="fas fa-minus-circle"></i> Adverse Factors
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li>• Extranodal extension (ENE)</li>
+                                <li>• Positive surgical margins</li>
+                                <li>• Subglottic extension</li>
+                                <li>• Continued smoking during treatment</li>
+                                <li>• Poorly differentiated histology</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-r">
+                            <h4 class="font-bold text-green-800 mb-3 flex items-center gap-2">
+                                <i class="fas fa-plus-circle"></i> Favorable Factors
+                            </h4>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li>• HPV positivity (weaker than oropharynx)</li>
+                                <li>• Early stage at presentation</li>
+                                <li>• Good performance status</li>
+                                <li>• Glottic location (vs supraglottic)</li>
+                                <li>• Smoker who quits during/after treatment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Complications Box -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-4">Treatment Complications</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-blue-50 rounded border-l-4 border-blue-600">
+                                <p class="font-bold text-blue-800 mb-2">Radiotherapy Effects</p>
+                                <ul class="text-xs text-slate-700 space-y-1">
+                                    <li>• Xerostomia (dry mouth)</li>
+                                    <li>• Mucositis</li>
+                                    <li>• Osteoradionecrosis</li>
+                                    <li>• Hypothyroidism</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-purple-50 rounded border-l-4 border-purple-600">
+                                <p class="font-bold text-purple-800 mb-2">Surgical Effects</p>
+                                <ul class="text-xs text-slate-700 space-y-1">
+                                    <li>• Pharyngocutaneous fistula</li>
+                                    <li>• Wound infection</li>
+                                    <li>• Stomal stenosis</li>
+                                    <li>• Voice/swallowing dysfunction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CLINICAL PEARLS SECTION -->
+            <section class="mb-16 bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-lg border border-yellow-200">
+                <h3 class="text-2xl font-bold text-yellow-900 mb-6 flex items-center gap-2">
+                    <i class="fas fa-lightbulb text-yellow-600"></i> Key Clinical Pearls
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">The "Silent" Zone</p>
+                        <p class="text-xs text-slate-700">Supraglottis and subglottis are clinically "silent." Tumors grow large before symptoms appear → later presentation.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">Referred Otalgia Red Flag</p>
+                        <p class="text-xs text-slate-700">Patient with normal ears but severe ear pain must have flexible laryngoscopy (CN X shared innervation with piriform sinus).</p>
+                    </div>
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">Fixation = T3</p>
+                        <p class="text-xs text-slate-700">Non-moving vocal cord immediately stages tumor as ≥T3, mandating multimodal therapy.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">Field Cancerization</p>
+                        <p class="text-xs text-slate-700">One head-neck cancer = high risk of synchronous lung/esophageal cancer from smoke exposure. Panendoscopy required.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">Neck Management Rules</p>
+                        <p class="text-xs text-slate-700">Supraglottic: 25-50% occult nodal metastasis → prophylactic neck RT/dissection needed even if N0.<br>Glottic T1: Rarely needs neck treatment.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded border-l-4 border-yellow-500">
+                        <p class="font-semibold text-slate-800 mb-1">Hoarseness >3 Weeks</p>
+                        <p class="text-xs text-slate-700">Red flag. Always warrants flexible laryngoscopy to rule out malignancy, even if patient is young.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Populations -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6">Special Populations</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-3">Elderly Patients</h4>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>• Often require modified treatment plans</li>
+                            <li>• RT alone preferred over Chemo-RT</li>
+                            <li>• Unable to tolerate cisplatin toxicity</li>
+                            <li>• Consider functional status, comorbidities</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-lg text-teal-700 mb-3">Immunocompromised Patients</h4>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>• Higher risk of aggressive recurrence</li>
+                            <li>• May not tolerate immunotherapy well</li>
+                            <li>• Consider alternative chemo regimens</li>
+                            <li>• Close surveillance post-treatment</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="border-t border-slate-200 pt-6 mt-8 text-xs text-slate-500">
+                <p><strong>Disclaimer:</strong> This content is for educational purposes. Clinical decision-making should always be individualized based on patient presentation, imaging, pathology, and multidisciplinary discussion. Consult current guidelines (NCCN, ASCO, ESMO) for evidence-based recommendations.</p>
+                <p class="mt-2">Last Updated: December 2024 | Based on AJCC 8th Edition, SEER Data 2014-2020</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // Navigation scroll functionality
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active', 'bg-slate-800'));
+                event.target.closest('.nav-item').classList.add('active', 'bg-slate-800');
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Age Distribution Chart
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['<40', '40-50', '50-60', '60-70', '70-80', '>80'],
+                datasets: [{
+                    label: 'Incidence (% of cases)',
+                    data: [3, 12, 25, 38, 18, 4],
+                    backgroundColor: '#0d9488',
+                    borderColor: '#0f766e',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 45,
+                        title: { display: true, text: 'Percentage of Cases' }
+                    }
+                }
+            }
+        });
+
+        // Survival Rates Chart
+        const survivalCtx = document.getElementById('survivalChart').getContext('2d');
+        new Chart(survivalCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Stage I/II', 'Stage III', 'Stage IV'],
+                datasets: [
+                    {
+                        label: 'Glottis',
+                        data: [84, 52, 17],
+                        backgroundColor: '#3b82f6',
+                        borderColor: '#1e40af',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Supraglottis',
+                        data: [61, 46, 16],
+                        backgroundColor: '#f97316',
+                        borderColor: '#c2410c',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'x',
+                plugins: {
+                    legend: { display: true, position: 'bottom' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: '5-Year Survival (%)' }
+                    }
+                }
+            }
+        });
+
+        // Risk Multiplier Heatmap (using bar chart as approximation)
+        const riskCtx = document.getElementById('riskChart').getContext('2d');
+        new Chart(riskCtx, {
+            type: 'line',
+            data: {
+                labels: ['No Risk', 'Tobacco Only', 'Alcohol Only', 'Tobacco + Alcohol', 'Heavy Combined Use'],
+                datasets: [{
+                    label: 'Relative Risk Multiplier',
+                    data: [1, 4, 5, 15, 100],
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#dc2626',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        type: 'logarithmic',
+                        beginAtZero: false,
+                        title: { display: true, text: 'Risk Multiplier (log scale)' }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
