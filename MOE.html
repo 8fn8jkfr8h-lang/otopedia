@@ -3,25 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malignant Otitis Externa | Advanced Clinical Report</title>
+    <title>Malignant Otitis Externa: Clinical Masterclass</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="stylesheet.css">
-    
-    <!-- Application Structure Plan:
-         1. Thematic Dashboard: Moves away from a simple report to an "Expert System" layout.
-         2. Critical Diagnostic Hub: Features the complete 7-point Levenson criteria.
-         3. Multidimensional Staging: Compares Benecke and Chandler systems side-by-side.
-         4. Advanced Management: Split into Medical (Pharmacology), Metabolic (Glycemic), and Adjunctive (HBOT/Surgery).
-         5. Prognostic Analytics: Visualizes survival rates relative to cranial nerve involvement.
-    -->
-
-    <!-- Visualization & Content Choices:
-         1. Goal: Compare Staging -> Viz: Side-by-Side Detail Cards (Grid).
-         2. Goal: Management Flow -> Viz: Interactive Tabbed Protocol (Medical vs Surgical vs HBO).
-         3. Goal: Prognosis -> Viz: Survival Curve (Chart.js Line Chart).
-         4. Goal: Diagnostic Criteria -> Viz: Status-Indicated Checklist (7 Points).
-    -->
 </head>
 <body class="text-slate-800">
 
@@ -30,13 +19,14 @@
         <!-- Sidebar Navigation -->
         <nav class="w-full md:w-64 bg-slate-900 text-slate-300 flex-shrink-0 sticky top-0 md:h-screen overflow-y-auto z-50">
             <div class="p-6 border-b border-slate-700">
-                <h1 class="text-xl font-bold text-teal-400">Malignant Otitis Externa<br><span class="text-white text-lg font-light">Masterclass</span></h1>
+                <h1 class="text-xl font-bold text-teal-400">Otopedia<br><span class="text-white text-lg font-light">MOE Masterclass</span></h1>
                 <p class="text-xs mt-2 text-slate-400">For Medical Professionals</p>
             </div>
             <ul class="py-4 space-y-1">
                 <li><button onclick="scrollToSection('overview')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3 active"><i class="fas fa-microscope w-5"></i> Overview & Epi</button></li>
-                <li><button onclick="scrollToSection('pathology')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-dna w-5"></i> Pathophysiology</button></li>
-                <li><button onclick="scrollToSection('diagnosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-user-md w-5"></i> Diagnosis</button></li>
+                <li><button onclick="scrollToSection('etiology')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-bacteria w-5"></i> Etiology</button></li>
+                <li><button onclick="scrollToSection('presentation')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-user-md w-5"></i> Presentation</button></li>
+                <li><button onclick="scrollToSection('diagnosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-stethoscope w-5"></i> Diagnosis</button></li>
                 <li><button onclick="scrollToSection('staging')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-layer-group w-5"></i> Staging</button></li>
                 <li><button onclick="scrollToSection('management')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-procedures w-5"></i> Management</button></li>
                 <li><button onclick="scrollToSection('prognosis')" class="nav-item w-full text-left px-6 py-3 hover:bg-slate-800 transition-colors flex items-center gap-3"><i class="fas fa-chart-line w-5"></i> Prognosis</button></li>
@@ -52,432 +42,718 @@
                     <div>
                         <a href="index.html" class="text-teal-600 hover:text-teal-800 text-sm inline-block mb-2">&larr; Back to Home</a>
                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Malignant Otitis Externa</h2>
-                        <p class="text-xl text-teal-700 font-medium italic">"Skull Base Osteomyelitis"</p>
+                        <p class="text-xl text-teal-700 font-medium italic">"Necrotizing Otitis Externa / Skull Base Osteomyelitis"</p>
                     </div>
                     <div class="hidden md:block text-right">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-teal-400">Diabetic Complication</span>
-                        <p class="text-sm text-slate-500 mt-1">Pseudomonas aeruginosa</p>
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-red-400">Critical Condition</span>
+                        <p class="text-sm text-slate-500 mt-1">ICD-10: H60.20</p>
                     </div>
                 </div>
-                <div class="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r shadow-sm">
-                    <p class="text-sm md:text-base text-blue-900">
-                        <strong>Faculty Note:</strong> Malignant Otitis Externa (MOE) is a rare but serious progressive skull base osteomyelitis predominantly affecting elderly diabetics with poor glycemic control. Unlike simple external otitis, MOE requires extended systemic antibiotic therapy (often 6-12 weeks), rigorous glycemic optimization, and close radiologic monitoring. Early recognition and aggressive management are critical to prevent intracranial extension, multiple cranial nerve palsies, and death.
+                <div class="mt-6 bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r shadow-sm">
+                    <p class="text-sm md:text-base text-teal-900">
+                        <strong>Faculty Note:</strong> MOE is an invasive, potentially lethal infection of the external auditory canal that extends into the skull base. Historically "malignant" due to its aggressive spread, it primarily affects elderly diabetics. Success hinges on early recognition, prolonged antipseudomonal therapy, and aggressive management of comorbidities.
                     </p>
                 </div>
             </header>
 
-            <!-- SECTION 1: OVERVIEW & EPIDEMIOLOGY -->
-            <section id="overview" class="mb-16 scroll-mt-8">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">1</span> 
-                    Epidemiology & Demographics
-                </h3>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Text Content -->
-                    <div class="space-y-4">
+            <div id="content-sections">
+                <!-- SECTION 1: OVERVIEW & EPIDEMIOLOGY -->
+                <section id="overview" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">1</span> 
+                        Epidemiology & Demographics
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Text Content -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                                <h4 class="font-bold text-lg text-teal-700 mb-3">Key Patient Profile</h4>
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside">
+                                    <li><strong>Mean Age:</strong> 70.3 Years (Range 18-99). Risk increases >60.</li>
+                                    <li><strong>Gender:</strong> Strong male predominance (1.45:1 to 2:1 ratio).</li>
+                                    <li><strong>Incidence:</strong> 1142% rise in England (2002-2017).</li>
+                                    <li><strong>Key Comorbidities:</strong> Diabetes (57-100%), Hypertension (51%).</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                                <h4 class="font-bold text-lg text-teal-700 mb-3">Predisposing Factors</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex items-center gap-2 text-slate-700">
+                                        <i class="fas fa-syringe text-teal-500"></i>
+                                        <span class="text-sm">Uncontrolled DM</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-slate-700">
+                                        <i class="fas fa-smoking text-teal-500"></i>
+                                        <span class="text-sm">Smoking History</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-slate-700">
+                                        <i class="fas fa-tint text-teal-500"></i>
+                                        <span class="text-sm">Microangiopathy</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-slate-700">
+                                        <i class="fas fa-swimmer text-teal-500"></i>
+                                        <span class="text-sm">Water Exposure</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <h4 class="font-bold text-lg text-teal-700 mb-3">Key Characteristics</h4>
-                            <ul class="space-y-3 text-slate-600 list-disc list-inside">
-                                <li><strong>Incidence:</strong> Rare disease. True incidence varies by study, estimated <0.01 per 100,000 in general population.</li>
-                                <li><strong>Age:</strong> Predominantly affects elderly (>50 years), with peak incidence in 5th-7th decades.</li>
-                                <li><strong>Gender:</strong> Equal gender distribution or slight male predominance.</li>
-                                <li><strong>Risk Factors:</strong> Diabetes mellitus (>90% of cases), immunocompromised states, prior radiation to skull base.</li>
-                                <li><strong>Epidemiology:</strong> MOE represents <5% of otitis externa cases but >90% of skull base osteomyelitis cases in diabetics.</li>
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">Incidence Trend (England)</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Dramatic rise in cases over 15 years due to aging and DM prevalence.</p>
+                            <div class="chart-container h-64 relative">
+                                <canvas id="incidenceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: ETIOLOGY & PATHOGENESIS -->
+                <section id="etiology" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">2</span> 
+                        Etiology & Pathogenesis
+                    </h3>
+                    
+                    <p class="mb-6 text-slate-600">
+                        MOE is driven by a convergence of host vulnerability (diabetes/immunosuppression) and pathogen virulence. The infection spreads along fascial planes and through the Haversian system of bone.
+                    </p>
+
+                    <!-- Microbial Spectrum Toggles -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <button onclick="showPathogen('pseudomonas')" id="btn-path-pseudomonas" class="pathogen-btn p-4 rounded-lg bg-teal-600 text-white font-bold shadow-md hover:bg-teal-700 transition-all border border-teal-500">
+                            P. aeruginosa<br><span class="text-xs font-normal opacity-80">90-95% of cases</span>
+                        </button>
+                        <button onclick="showPathogen('staph')" id="btn-path-staph" class="pathogen-btn p-4 rounded-lg bg-white text-slate-600 font-bold shadow hover:bg-slate-50 transition-all border border-slate-200">
+                            S. aureus<br><span class="text-xs font-normal opacity-80">MRSA Increasing</span>
+                        </button>
+                        <button onclick="showPathogen('fungal')" id="btn-path-fungal" class="pathogen-btn p-4 rounded-lg bg-white text-slate-600 font-bold shadow hover:bg-slate-50 transition-all border border-slate-200">
+                            Fungal<br><span class="text-xs font-normal opacity-80">Aspergillus/Candida</span>
+                        </button>
+                        <button onclick="showPathogen('atypical')" id="btn-path-atypical" class="pathogen-btn p-4 rounded-lg bg-white text-slate-600 font-bold shadow hover:bg-slate-50 transition-all border border-slate-200">
+                            Atypical<br><span class="text-xs font-normal opacity-80">Klebsiella/Proteus</span>
+                        </button>
+                    </div>
+
+                    <div id="pathogen-detail" class="bg-white border-l-4 border-teal-500 p-6 rounded shadow-sm min-h-[140px]">
+                        <h4 class="text-xl font-bold text-slate-800">Pseudomonas aeruginosa</h4>
+                        <p class="mt-2 text-slate-600 text-sm">Non-commensal organism in the healthy ear. Uses proteolytic enzymes (elastase, alkaline protease) and Exotoxin A to degrade host tissues and evade the immune response. Biofilm formation provides a physical barrier against antibiotics.</p>
+                    </div>
+
+                    <div class="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                            <i class="fas fa-skull text-blue-500"></i> Mechanisms of Bone Invasion
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-4 rounded border border-blue-200 shadow-sm">
+                                <h5 class="font-bold text-blue-800 text-sm mb-1">Tissue Sequence</h5>
+                                <p class="text-xs text-slate-600">Cellulitis → Chondritis → Periostitis → Osteitis → Osteomyelitis.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded border border-blue-200 shadow-sm">
+                                <h5 class="font-bold text-blue-800 text-sm mb-1">Leaping Focus</h5>
+                                <p class="text-xs text-slate-600">Bacteria invade small vascular channels (Haversian system), causing localized vasculitis.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded border border-blue-200 shadow-sm">
+                                <h5 class="font-bold text-blue-800 text-sm mb-1">Anatomical Shortcuts</h5>
+                                <p class="text-xs text-slate-600">Spread through Fissures of Santorini to parotid, TMJ, and parapharyngeal space.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: CLINICAL PRESENTATION -->
+                <section id="presentation" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">3</span> 
+                        Clinical Presentation
+                    </h3>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 mb-8">
+                        <h4 class="font-bold text-xl text-teal-700 mb-6 text-center">The Classic Clinical Tetrad</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-100">
+                                    <i class="fas fa-exclamation-triangle text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800 text-sm">Exasperating Otalgia</h5>
+                                <p class="text-xs text-slate-500 mt-1">Deep, severe, worse at night.</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-100">
+                                    <i class="fas fa-tint text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800 text-sm">Persistent Otorrhea</h5>
+                                <p class="text-xs text-slate-500 mt-1">Foul-smelling, purulent discharge.</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-teal-100">
+                                    <i class="fas fa-bacteria text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800 text-sm">Granulation Tissue</h5>
+                                <p class="text-xs text-slate-500 mt-1">Found at EAC floor/junction.</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-100">
+                                    <i class="fas fa-brain text-2xl"></i>
+                                </div>
+                                <h5 class="font-bold text-slate-800 text-sm">Cranial Neuropathy</h5>
+                                <p class="text-xs text-slate-500 mt-1">Indicates invasive progression.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fas fa-search-plus text-teal-500"></i> Red Flags & Exam Findings
+                            </h4>
+                            <div class="bg-white p-5 rounded-lg border-l-4 border-yellow-500 shadow-sm">
+                                <ul class="space-y-3 text-sm text-slate-600">
+                                    <li><span class="font-bold text-slate-800">Mastoid Tenderness:</span> Intense pain on palpation of the mastoid tip.</li>
+                                    <li><span class="font-bold text-slate-800">TMJ Pain:</span> Indicates anterior spread through Fissures of Santorini.</li>
+                                    <li><span class="font-bold text-slate-800">EAC Stenosis:</span> Severe edema often occludes the canal.</li>
+                                    <li><span class="font-bold text-slate-800">TM Integrity:</span> Usually intact; perforation is a late finding.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fas fa-network-wired text-teal-500"></i> Neurological Manifestations (9-27%)
+                            </h4>
+                            <div class="bg-slate-900 p-5 rounded-lg text-slate-300 shadow-lg">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+                                        <span class="text-sm font-bold text-white">CN VII (Facial)</span>
+                                        <span class="text-xs bg-red-900 text-red-200 px-2 py-0.5 rounded">91% of neuropathies</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+                                        <span class="text-sm">CN IX, X, XI (Jugular Foramen)</span>
+                                        <span class="text-xs text-slate-500">Dysphagia, Hoarseness</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+                                        <span class="text-sm">CN XII (Hypoglossal)</span>
+                                        <span class="text-xs text-slate-500">Tongue Deviation</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">CN VI, V, III (Petrous Apex)</span>
+                                        <span class="text-xs text-red-400 font-bold">Terminal Stage</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: DIAGNOSTIC WORKUP -->
+                <section id="diagnosis" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">4</span> 
+                        Diagnostic Workup
+                    </h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-blue-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-microscope text-blue-500 mr-2"></i>Laboratory & Cultures</h4>
+                            <p class="text-sm text-slate-600 mb-3">Baseline inflammatory markers and glucose control are essential for monitoring.</p>
+                            <ul class="text-xs text-slate-500 space-y-1">
+                                <li><strong>ESR/CRP:</strong> Markedly elevated; key for monitoring treatment response.</li>
+                                <li><strong>HbA1c:</strong> Guides aggressive diabetes management.</li>
+                                <li><strong>Cultures:</strong> Ear swab (pre-drops) is mandatory.</li>
                             </ul>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <h4 class="font-bold text-lg text-teal-700 mb-3">Clinical Presentation</h4>
-                            <div class="grid grid-cols-3 gap-2 text-center">
-                                <div class="p-3 bg-slate-50 rounded">
-                                    <i class="fas fa-head-side-cough text-2xl text-red-400 mb-2"></i>
-                                    <p class="text-sm font-semibold">Severe Otalgia</p>
-                                </div>
-                                <div class="p-3 bg-slate-50 rounded">
-                                    <i class="fas fa-tint text-2xl text-red-600 mb-2"></i>
-                                    <p class="text-sm font-semibold">Otorrhea</p>
-                                </div>
-                                <div class="p-3 bg-slate-50 rounded">
-                                    <i class="fas fa-deaf text-2xl text-slate-400 mb-2"></i>
-                                    <p class="text-sm font-semibold">Conductive Hearing Loss</p>
-                                </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-teal-500 shadow-sm relative">
+                            <span class="absolute top-2 right-2 bg-teal-100 text-teal-800 text-[10px] font-bold px-1.5 py-0.5 rounded">GOLD STANDARD</span>
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-magnet text-teal-500 mr-2"></i>MRI & CT Imaging</h4>
+                            <p class="text-sm text-slate-600 mb-3">Combines bone detail with superior soft tissue resolution.</p>
+                            <ul class="text-xs text-slate-500 space-y-1">
+                                <li><strong>MRI (T1/T2/Gad):</strong> Best for marrow edema and dural involvement.</li>
+                                <li><strong>CT (Bone):</strong> Shows cortical erosion and demineralization.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border-t-4 border-purple-500 shadow-sm">
+                            <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-atom text-purple-500 mr-2"></i>Nuclear Medicine</h4>
+                            <p class="text-sm text-slate-600 mb-3">Functional imaging remains critical in the MOE diagnostic algorithm.</p>
+                            <ul class="text-xs text-slate-500 space-y-1">
+                                <li><strong>Technetium-99m:</strong> High sensitivity for bone turnover; remains positive.</li>
+                                <li><strong>Gallium-67:</strong> Binds to leukocytes; returns to normal with resolution.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded shadow-sm mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-lightbulb text-yellow-600 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-yellow-800 text-sm">Clinical Pearl: Biopsy is Mandatory</h5>
+                                <p class="text-xs text-yellow-900">Any granulation tissue in the EAC floor must be biopsied to rule out squamous cell carcinoma (SCC), which can mimic the presentation of MOE perfectly.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Chart Container -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-700 mb-2 text-center">Microbiology Distribution</h4>
-                        <p class="text-xs text-slate-500 text-center mb-4">Pseudomonas aeruginosa is the predominant pathogen.</p>
-                        <div class="chart-container">
-                            <canvas id="organismChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 2: PATHOPHYSIOLOGY -->
-            <section id="pathology" class="mb-16 scroll-mt-8">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                    <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">2</span> 
-                    Pathophysiology
-                </h3>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Text Content -->
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <h4 class="font-bold text-lg text-teal-700 mb-3">Diabetic Microenvironment</h4>
-                            <p class="text-slate-600 leading-relaxed mb-4">
-                                MOE is not merely an external ear infection; it is a <strong>progressive skull base osteomyelitis</strong> of the temporal bone. The disease exploits multiple diabetic complications: impaired glucose homeostasis, microangiopathy (reducing bone perfusion), and neutrophil dysfunction (reducing inflammatory response). These deficiencies create an immunologic environment where the external auditory canal becomes a nidus for invasive infection through anatomical weaknesses.
-                            </p>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                                    <span class="text-xs font-bold text-blue-600 uppercase">Step 1</span>
-                                    <p class="text-sm font-semibold mt-1">EAC Colonization</p>
-                                    <p class="text-xs text-slate-500 mt-1">Pseudomonas aeruginosa preferentially colonizes the alkaline cerumen of diabetics, evading the normal acidic microenvironment.</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                                    <span class="text-xs font-bold text-blue-600 uppercase">Step 2</span>
-                                    <p class="text-sm font-semibold mt-1">Soft Tissue Penetration</p>
-                                    <p class="text-xs text-slate-500 mt-1">Bacteria penetrate through the bony-cartilaginous junction and Fissures of Santorini into periosteal tissues.</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                                    <span class="text-xs font-bold text-blue-600 uppercase">Step 3</span>
-                                    <p class="text-sm font-semibold mt-1">Osteomyelitis</p>
-                                    <p class="text-xs text-slate-500 mt-1">Chronic, indolent osteomyelitis with progressive bone resorption via parosteal and endosteal pathways, eventually extending to skull base.</p>
-                                </div>
+                    <!-- Levenson's Diagnostic Criteria -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fas fa-clipboard-check text-teal-600"></i> Levenson's Diagnostic Criteria (1991)
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <h5 class="text-sm font-bold text-teal-700 uppercase tracking-wider mb-3">Obligatory (Major) Criteria</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check text-teal-500 mt-0.5"></i>
+                                        <span>Refractory otitis externa (>1 week)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check text-teal-500 mt-0.5"></i>
+                                        <span>Severe nocturnal otalgia</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check text-teal-500 mt-0.5"></i>
+                                        <span>Purulent otorrhea</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check text-teal-500 mt-0.5"></i>
+                                        <span>Granulation tissue in the EAC</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check text-teal-500 mt-0.5"></i>
+                                        <span>Positive Tc-99m bone scan</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <h5 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">Minor (Occasional) Criteria</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-xs text-slate-500">
+                                        <i class="fas fa-plus text-slate-400 mt-0.5"></i>
+                                        <span>Diabetes mellitus / Advanced age</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-500">
+                                        <i class="fas fa-plus text-slate-400 mt-0.5"></i>
+                                        <span>Cranial nerve palsy</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-500">
+                                        <i class="fas fa-plus text-slate-400 mt-0.5"></i>
+                                        <span>Positive CT findings (bone erosion)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-500">
+                                        <i class="fas fa-plus text-slate-400 mt-0.5"></i>
+                                        <span>Isolation of P. aeruginosa or S. aureus</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <!-- Chart Container -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                        <h4 class="font-bold text-slate-700 mb-2 text-center">Organism Profile</h4>
-                        <p class="text-xs text-slate-500 text-center mb-4">Pseudomonas aeruginosa dominates in MOE.</p>
-                        <div class="chart-container">
-                            <canvas id="organismChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 border-l-4 border-l-orange-500">
-                    <h4 class="font-bold text-lg text-orange-700 mb-3">Natural History Without Treatment</h4>
-                    <p class="text-slate-600 text-sm">MOE is characterized by <strong>unrelenting, severe otalgia</strong> that persists despite standard topical antibiotic therapy and may not correlate with clinical exam findings. Untreated disease follows an indolent course over weeks to months, with potential for rapid deterioration and spread to intracranial structures. Mortality in untreated cases can exceed 50% in diabetic patients.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: DIAGNOSIS -->
-        <section id="diagnosis" class="mb-16 scroll-mt-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">3</span> 
-                Diagnosis
-            </h3>
-            <div class="text-center mb-8">
-                <h4 class="text-2xl font-bold text-slate-900">The 7 Levenson's Diagnostic Criteria</h4>
-                <p class="text-slate-500 mt-2">The academic gold standard for definitive diagnosis.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- 1 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-crimson-700">
-                    <div class="text-2xl mb-2">👂</div>
-                    <h4 class="font-bold text-sm">Pain (Otalgia)</h4>
-                    <p class="text-xs text-slate-500 mt-1">Severe, deep-seated, often nocturnal and out of proportion.</p>
-                </div>
-                <!-- 2 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-crimson-700">
-                    <div class="text-2xl mb-2">💧</div>
-                    <h4 class="font-bold text-sm">Otorrhea</h4>
-                    <p class="text-xs text-slate-500 mt-1">Chronic, purulent discharge, often foul-smelling.</p>
-                </div>
-                <!-- 3 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-crimson-700">
-                    <div class="text-2xl mb-2">🌱</div>
-                    <h4 class="font-bold text-sm">Granulation Tissue</h4>
-                    <p class="text-xs text-slate-500 mt-1">Found at bony-cartilaginous junction of EAC floor.</p>
-                </div>
-                <!-- 4 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-crimson-700">
-                    <div class="text-2xl mb-2">❌</div>
-                    <h4 class="font-bold text-sm">Treatment Failure</h4>
-                    <p class="text-xs text-slate-500 mt-1">Refractory to standard local therapy for > 1 week.</p>
-                </div>
-                <!-- 5 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-blue-500">
-                    <div class="text-2xl mb-2">🍬</div>
-                    <h4 class="font-bold text-sm">Host Factors</h4>
-                    <p class="text-xs text-slate-500 mt-1">Diabetes mellitus or an immunocompromised state.</p>
-                </div>
-                <!-- 6 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-blue-500">
-                    <div class="text-2xl mb-2">🔬</div>
-                    <h4 class="font-bold text-sm">Microbiology</h4>
-                    <p class="text-xs text-slate-500 mt-1">Positive culture for Pseudomonas aeruginosa (typically).</p>
-                </div>
-                <!-- 7 -->
-                <div class="criteria-box p-6 bg-white rounded-xl shadow-sm border-l-4 border-emerald-500 lg:col-span-2">
-                    <div class="text-2xl mb-2">☢️</div>
-                    <h4 class="font-bold text-sm">Positive Tc-99m Scan</h4>
-                    <p class="text-xs text-slate-500 mt-1">Uptake in the temporal bone demonstrating active osteoblastic activity (Skull Base Osteomyelitis).</p>
-                </div>
-            </div>
-
-            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="p-4 bg-slate-100 rounded text-sm text-slate-700">
-                    <h4 class="font-bold text-slate-800 mb-3">Imaging Studies</h4>
-                    <ul class="space-y-2">
-                        <li><strong>CT Temporal Bone:</strong> Essential for detecting bony erosion, particularly of the mastoid cortex, skull base, and petrous apex. Specificity ~90%.</li>
-                        <li><strong>MRI:</strong> Gold standard for assessing soft tissue extension, dural involvement, and staging. T1 with gadolinium shows enhancement of inflamed periosteal tissues.</li>
-                        <li><strong>Gallium-67 or Indium-111 Scintigraphy:</strong> Highly sensitive (>90%) for detecting active osteomyelitis. Serial scans used for monitoring treatment response. Normalization of scan indicates biological cure.</li>
-                    </ul>
-                </div>
-                <div class="p-4 bg-slate-100 rounded text-sm text-slate-700">
-                    <h4 class="font-bold text-slate-800 mb-3">Laboratory & Clinical Assessment</h4>
-                    <ul class="space-y-2">
-                        <li><strong>Inflammatory Markers:</strong> Baseline ESR and CRP; lack of elevation does NOT exclude MOE. Serial measurements guide treatment duration.</li>
-                        <li><strong>Glycemic Control:</strong> HbA1c and blood glucose levels. Tight glycemic control is essential for cure.</li>
-                        <li><strong>Culture:</strong> EAC drainage or biopsy specimen. Gram-negative rods (Pseudomonas) in >90% of cases.</li>
-                        <li><strong>Cranial Nerve Assessment:</strong> Formal testing for CN VII, IX, X, XII palsies. Prognostically significant if present.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: STAGING -->
-        <section id="staging" class="mb-16 scroll-mt-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">4</span> 
-                Staging Systems
-            </h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
-                        <span class="p-2 bg-blue-100 rounded-lg mr-3 text-blue-600">C</span> Chandler Staging System
+                <!-- SECTION 5: STAGING & CLASSIFICATION -->
+                <section id="staging" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">5</span> 
+                        Staging & Classification
                     </h3>
-                    <div class="space-y-3">
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-blue-600">Stage I:</span> EAC & Soft Tissue only.</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-blue-600">Stage II:</span> Bone involvement (Osteitis).</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-blue-600">Stage III:</span> Extension to Parotid, Mastoid, or Infratemporal Fossa.</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-blue-600">Stage IV:</span> Cranial Nerve palsy or Intracranial extension.</div>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
-                        <span class="p-2 bg-emerald-100 rounded-lg mr-3 text-emerald-600">B</span> Benecke Classification
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-emerald-600">Grade 1:</span> Soft tissue infection (EAC/Parotid).</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-emerald-600">Grade 2:</span> Skull base osteomyelitis (Limited).</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-emerald-600">Grade 3:</span> Skull base osteomyelitis (Extensive + CN Palsy).</div>
-                        <div class="p-3 bg-slate-50 rounded-lg"><span class="font-bold text-emerald-600">Grade 4:</span> Intracranial complications (Meningitis/Abscess).</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5: MANAGEMENT -->
-        <section id="management" class="mb-16 scroll-mt-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">5</span> 
-                Management Algorithm
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Column 1: Medical -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-600">
-                    <h3 class="font-bold text-lg mb-4">1. Antimicrobial Strategy</h3>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-blue-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-blue-800">First-Line Agent</h4>
-                            <p class="text-xs mt-1"><strong>Fluoroquinolone (Ciprofloxacin)</strong>: 750 mg PO BID or 400 mg IV q8-12h. Excellent bone penetration, high intracellular bioavailability. Treatment duration: 4-6 weeks minimum, often extended to 8-12 weeks depending on clinical response and imaging findings.</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-slate-800">Severe/Resistant Cases</h4>
-                            <p class="text-xs mt-1"><strong>Anti-pseudomonal Agents:</strong> Ceftazidime (2g IV q8h), Piperacillin-tazobactam (4.5g IV q6-8h), or Aminoglycosides (Tobramycin or Amikacin) + Fluoroquinolone. Higher-dose therapy needed for poor glycemic control or CNS involvement.</p>
-                        </div>
-                        <div class="p-4 bg-rose-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-rose-800">Fungal Infection (Aspergillus/Mucor)</h4>
-                            <p class="text-xs mt-1"><strong>Voriconazole</strong> (IV then PO) or <strong>Amphotericin B</strong> (liposomal preferred) for culture-confirmed fungal MOE. Rare but seen in severely immunocompromised or poorly controlled diabetics. Often requires longer treatment and often surgical debridement.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column 2: Metabolic & Adjunctive -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-emerald-600">
-                    <h3 class="font-bold text-lg mb-4">2. Metabolic & HBOT</h3>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-emerald-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-emerald-800">Glycemic Optimization</h4>
-                            <p class="text-xs mt-1"><strong>ESSENTIAL component of therapy.</strong> Target HbA1c < 7%, ideally < 6.5% during active infection. Frequent glucose monitoring. MOE will NOT resolve with persistently elevated glucose levels—this is a absolute requirement for cure, not optional adjunctive therapy.</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-xl">
-                            <h4 class="font-bold text-sm text-slate-800">Aural Toilet</h4>
-                            <p class="text-xs mt-1">Regular otologic office debridement of granulation tissue and necrotic bone under direct visualization. Facilitates medication penetration and may provide culture material. Avoid aggressive instrumentation that risks exposing more bone to infection.</p>
-                        </div>
-                        <div class="p-4 bg-slate-900 text-white rounded-xl">
-                            <h4 class="font-bold text-sm text-emerald-400">Hyperbaric Oxygen (HBOT)</h4>
-                            <p class="text-xs mt-1">Controversial adjunctive therapy. Considered for Stage III/IV disease, recurrent cases, or cranial nerve involvement. Enhanced angiogenesis and osteoblast recruitment. Literature shows 70% cure rates in treated cohorts, but unclear if benefit is independent of antibiotics alone.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column 3: Surgical indications -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-slate-900">
-                    <h3 class="font-bold text-lg mb-4">3. Surgical Indications</h3>
-                    <p class="text-xs text-slate-500 mb-4">Surgery is generally avoided (risk of exposing more bone to infection) except for:</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Biopsy:</strong> When diagnosis is uncertain or to exclude SCC of EAC. Culture obtained from granulation tissue. Risk of hemorrhage must be weighed against diagnostic benefit.</li>
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Abscess Drainage/I&D:</strong> Only if frank collection detected (rare in MOE—usually just cellulitis). May be necessary in intracranial complications.</li>
-                        <li class="flex items-start text-sm bg-slate-50 p-2 rounded"><span class="text-red-500 mr-2">●</span> <strong>Sequestrectomy:</strong> Removal of sequestered bone fragments if disease progresses despite antibiotics. Rarely performed and controversial due to potential for further bone exposure.</li>
-                    </ul>
-                    <div class="mt-4 p-3 border border-red-200 bg-red-50 rounded-lg text-[10px] text-red-700">
-                        <strong>⚠️ CRITICAL:</strong> Facial nerve decompression is contraindicated. CN VII palsy results from inflammatory edema and toxin-mediated injury, not mechanical compression. Surgery does not improve CN outcome and risks further complications.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: PROGNOSIS -->
-        <section id="prognosis" class="mb-16 scroll-mt-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">6</span> 
-                Prognosis & Survival
-            </h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold mb-6">Survival & Clinical Variables</h3>
-                    <div class="chart-container">
-                        <canvas id="prognosisChart"></canvas>
-                    </div>
-                    <p class="text-xs text-slate-500 mt-4 italic">*Prognosis significantly worsens with each additional cranial nerve involved.</p>
-                </div>
-                <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-xl font-bold mb-4">Monitoring Resolution</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-blue-400 font-bold text-sm uppercase">ESR & CRP</h4>
-                            <p class="text-xs text-slate-400 mt-1">Weekly tracking. Failure of ESR to fall suggests treatment resistance or non-compliance.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-blue-400 font-bold text-sm uppercase">Gallium-67 vs. Indium-111</h4>
-                            <p class="text-xs text-slate-400 mt-1"><strong>Gallium-67</strong> accumulates in areas of inflammation via binding to transferrin and lactoferrin. More sensitive for detecting active osteomyelitis. <strong>Indium-111</strong> labels leukocytes directly—higher specificity. Serial scans (baseline, 4-6 weeks, 12 weeks) guide treatment duration. Normalization indicates biological cure; treatment typically continues 1-2 weeks after scan normalization.</p>
-                        </div>
-                        <div class="border-t border-slate-800 pt-4">
-                            <h4 class="text-rose-400 font-bold text-sm">Recurrence Rate</h4>
-                            <div class="w-full bg-slate-800 rounded-full h-2.5 mt-2">
-                                <div class="bg-rose-500 h-2.5 rounded-full" style="width: 25%"></div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p class="text-sm text-slate-500">Gleeson is common for clinical practice. Clival staging predicts clival involvement severity.</p>
+                            <div class="flex bg-slate-200 rounded p-1">
+                                <button onclick="switchSystem('gleeson')" id="tab-gleeson" class="px-4 py-1.5 rounded text-sm font-semibold bg-white text-slate-800 shadow-sm transition-all">Gleeson System</button>
+                                <button onclick="switchSystem('clival')" id="tab-clival" class="px-4 py-1.5 rounded text-sm font-medium text-slate-600 hover:text-slate-800 transition-all">Clival Staging</button>
                             </div>
-                            <p class="text-[10px] text-slate-500 mt-1">Approximately 5-15% recurrence with adequate treatment (6-12 weeks). Rates up to 25-30% if treatment <6 weeks. Requires glycemic control for cure.</p>
+                        </div>
+
+                        <div class="p-6 md:p-8">
+                            <div id="staging-container" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                                <div id="stage-controls" class="md:col-span-4 flex flex-col space-y-2">
+                                    <!-- Controls injected by JS -->
+                                </div>
+                                <div class="md:col-span-8 bg-slate-50 rounded-lg p-6 border border-slate-200" id="stage-display">
+                                    <!-- Display injected by JS -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                </section>
+
+                <!-- SECTION 6: MANAGEMENT ALGORITHM -->
+                <section id="management" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">6</span> 
+                        Management Algorithm
+                    </h3>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 mb-8">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div class="flex-1 space-y-4">
+                                <div class="p-4 bg-teal-50 border-l-4 border-teal-500 rounded">
+                                    <h5 class="font-bold text-teal-800 text-sm">1. Initial Stabilization</h5>
+                                    <p class="text-xs text-teal-700">Meticulous glycemic control (Insulin preferred) and analgesia.</p>
+                                </div>
+                                <div class="p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+                                    <h5 class="font-bold text-blue-800 text-sm">2. Systemic Antibiotics</h5>
+                                    <p class="text-xs text-blue-700">Ciprofloxacin (Oral) or Ceftazidime (IV) for 6 weeks - 6 months.</p>
+                                </div>
+                                <div class="p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
+                                    <h5 class="font-bold text-purple-800 text-sm">3. Refractory / Atypical</h5>
+                                    <p class="text-xs text-purple-700">Voriconazole for fungal; Meropenem for resistant Pseudomonas.</p>
+                                </div>
+                            </div>
+                            <div class="hidden lg:block border-l-2 border-dashed border-slate-200 h-48 mx-8"></div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 flex-1">
+                                <h4 class="font-bold text-slate-800 mb-3 text-center">Surgery & Adjuncts</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5"></i>
+                                        <span><strong>Biopsy/Debridement:</strong> Mandatory to rule out malignancy and improve hygiene.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5"></i>
+                                        <span><strong>Abscess Drainage:</strong> For localized parapharyngeal or mastoid collections.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-xs text-slate-600">
+                                        <i class="fas fa-plus-circle text-blue-500 mt-0.5"></i>
+                                        <span><strong>HBOT:</strong> 100% Oxygen at >1 ATM for refractory cases (40-60 sessions).</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-teal-50 rounded text-sm text-teal-700 flex items-start gap-3">
+                        <i class="fas fa-bullseye text-teal-600 mt-1"></i>
+                        <div>
+                            <strong>Termination Criteria:</strong> Treatment completion is based on clinical resolution, normalization of ESR/CRP, and a <strong>negative Gallium-67 scan</strong>. Antibiotics are often continued for 1 week post-normalization.
+                        </div>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-exclamation-circle text-red-600 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-red-800 text-sm">Critical Alert: Facial Nerve Palsy</h5>
+                                    <p class="text-xs text-red-900">New-onset facial nerve palsy in an elderly diabetic with otitis externa is MOE until proven otherwise. It indicates infection has reached the stylomastoid foramen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-chart-line text-teal-600 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-teal-800 text-sm">Trend Watch: PET/MRI</h5>
+                                    <p class="text-xs text-teal-900">Emerging research suggests PET/MRI is superior for distinguishing residual inflammation from active bone infection, potentially reducing antibiotic durations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: PROGNOSIS & OUTCOMES -->
+                <section id="prognosis" class="mb-16 scroll-mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="bg-slate-800 text-white w-8 h-8 rounded flex items-center justify-center text-sm">7</span> 
+                        Prognosis & Outcomes
+                    </h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-slate-700 mb-2 text-center">Estimated Survival Probability</h4>
+                            <p class="text-xs text-slate-500 text-center mb-4">Overall 5-year survival remains around 51% due to comorbidities and disease severity.</p>
+                            <div class="chart-container h-64 relative">
+                                <canvas id="survivalChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 text-center">
+                                    <span class="block text-3xl font-bold text-teal-600">18%</span>
+                                    <span class="text-xs text-slate-500 uppercase font-semibold">Global Mortality</span>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 text-center">
+                                    <span class="block text-3xl font-bold text-red-600">40%</span>
+                                    <span class="text-xs text-slate-500 uppercase font-semibold">Adverse Outcome</span>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 p-6 rounded-lg text-white shadow-lg">
+                                <h4 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-exclamation-circle text-yellow-500"></i> Predictors of Mortality</h4>
+                                <ul class="space-y-3 text-sm text-slate-300">
+                                    <li class="flex justify-between border-b border-slate-700 pb-2">
+                                        <span>Multiple CN Palsies</span>
+                                        <span class="text-red-400 font-bold">80% Risk</span>
+                                    </li>
+                                    <li class="flex justify-between border-b border-slate-700 pb-2">
+                                        <span>Fungal Etiology</span>
+                                        <span class="text-red-400 font-bold">High Risk</span>
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span>Age > 70 Years</span>
+                                        <span class="text-yellow-400 font-bold">Adverse</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 rounded shadow-sm border-t-4 border-green-500 text-center">
-                    <span class="block text-3xl font-bold text-slate-800">80-90%</span>
-                    <span class="text-sm text-slate-500">Localized Disease (5-yr)</span>
+            <!-- Footer Disclaimer -->
+            <footer class="mt-16 pt-8 border-t border-slate-200 text-slate-500 text-sm">
+                <p class="mb-4">© 2025 Otopedia Clinical Reference. For educational purposes only.</p>
+                <div class="bg-slate-50 p-4 rounded border border-slate-200 text-xs italic">
+                    <strong>Disclaimer:</strong> This content is intended for medical professionals only. The information provided is for educational purposes and does not constitute medical advice, diagnosis, or treatment. Clinical judgment should always be exercised.
                 </div>
-                <div class="bg-white p-4 rounded shadow-sm border-t-4 border-yellow-500 text-center">
-                    <span class="block text-3xl font-bold text-slate-800">50-70%</span>
-                    <span class="text-sm text-slate-500">Advanced Disease (5-yr)</span>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm border-t-4 border-orange-500 text-center">
-                    <span class="block text-3xl font-bold text-slate-800">20-40%</span>
-                    <span class="text-sm text-slate-500">Cranial Nerve Palsy (5-yr)</span>
-                </div>
-                <div class="bg-white p-4 rounded shadow-sm border-t-4 border-red-500 text-center">
-                    <span class="block text-3xl font-bold text-slate-800">< 10%</span>
-                    <span class="text-sm text-slate-500">Intracranial Extension (5-yr)</span>
-                </div>
-            </div>
-            <div class="mt-4 p-3 bg-red-50 text-red-700 text-sm rounded border border-red-100">
-                <strong>⚠️ Critical Note:</strong> Without treatment, mortality approaches 50% in diabetic patients. Mortality increases significantly with cranial nerve involvement (up to 90% if multiple CNs affected). Early diagnosis, aggressive systemic antibiotics, and tight glycemic control are essential to prevent progression to intracranial disease and death.
-            </div>
-        </section>
-
-    </main>
-
-            <footer class="text-center text-slate-400 text-sm py-8 border-t border-slate-200">
-                <p>Generated for Medical Education Purposes • 2024</p>
-                <p class="mt-1">Always refer to the latest NCCN/ESMO guidelines for clinical decision making.</p>
             </footer>
 
         </main>
     </div>
 
     <script>
-        // --- 1. Navigation Logic ---
         function scrollToSection(id) {
             const element = document.getElementById(id);
-            const mainContent = document.getElementById('main-content');
-            
-            // Adjust scroll position for sticky header
-            const offsetTop = element.offsetTop - 20;
-            
-            mainContent.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-
-            // Update active state in nav
-            document.querySelectorAll('.nav-item').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerHTML.includes(id)) {
-                   btn.classList.add('active');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active state in sidebar
+                document.querySelectorAll('.nav-item').forEach(btn => {
+                    btn.classList.remove('active', 'bg-slate-800', 'text-white');
+                    btn.classList.add('text-slate-300');
+                });
+                
+                const activeBtn = Array.from(document.querySelectorAll('.nav-item')).find(btn => 
+                    btn.getAttribute('onclick').includes(id)
+                );
+                if (activeBtn) {
+                    activeBtn.classList.add('active', 'bg-slate-800', 'text-white');
+                    activeBtn.classList.remove('text-slate-300');
                 }
-            });
+            }
         }
 
-        // Charts Implementation
-        function initCharts() {
-            // Microbiology
-            const ctxOrg = document.getElementById('organismChart').getContext('2d');
-            new Chart(ctxOrg, {
-                type: 'doughnut',
-                data: {
-                    labels: ['P. Aeruginosa (95%)', 'S. Aureus (2%)', 'Proteus (1%)', 'Aspergillus (2%)'],
-                    datasets: [{
-                        data: [95, 2, 1, 2],
-                        backgroundColor: ['#2563eb', '#94a3b8', '#cbd5e1', '#e11d48'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } }
-                }
-            });
+        // Initialize tooltips or other elements if needed
+        window.addEventListener('DOMContentLoaded', () => {
+            initIncidenceChart();
+            initSurvivalChart();
+            switchSystem('gleeson');
+            initScrollSpy();
+        });
 
-            // Survival Prognosis Curve
-            const ctxProg = document.getElementById('prognosisChart').getContext('2d');
-            new Chart(ctxProg, {
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        navItems.forEach(item => {
+                            item.classList.remove('active', 'bg-slate-800', 'text-white');
+                            item.classList.add('text-slate-300');
+                            
+                            if (item.getAttribute('onclick').includes(id)) {
+                                item.classList.add('active', 'bg-slate-800', 'text-white');
+                                item.classList.remove('text-slate-300');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        function initSurvivalChart() {
+            const ctx = document.getElementById('survivalChart').getContext('2d');
+            new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['No CN Palsy', 'CN VII Only', 'CN VII + IX', 'Multiple CNs', 'Intracranial'],
+                    labels: ['0m', '12m', '24m', '36m', '48m', '60m'],
                     datasets: [{
-                        label: 'Estimated Survival Rate (%)',
-                        data: [95, 80, 60, 40, 15],
-                        borderColor: '#2563eb',
-                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        label: 'Overall Survival',
+                        data: [100, 85, 70, 62, 55, 51],
+                        borderColor: '#0d9488',
+                        backgroundColor: 'rgba(13, 148, 136, 0.1)',
                         fill: true,
-                        tension: 0.4,
-                        pointRadius: 6,
-                        pointBackgroundColor: '#fff',
-                        pointBorderWidth: 2
+                        stepped: true,
+                        borderWidth: 2,
+                        pointRadius: 0
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: {
-                        y: { beginAtZero: true, max: 100, ticks: { font: { size: 10 } } },
-                        x: { ticks: { font: { size: 10 } } }
+                    plugins: {
+                        legend: { display: false }
                     },
-                    plugins: { legend: { display: false } }
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: { display: true, text: 'Survival Probability (%)', font: { size: 10 } }
+                        },
+                        x: {
+                            title: { display: true, text: 'Time (Months)', font: { size: 10 } }
+                        }
+                    }
                 }
             });
         }
 
-        window.onload = function() {
-            initCharts();
+        const stagingSystems = {
+            gleeson: [
+                { id: 'g1', label: 'Stage 1', sub: 'Soft Tissue + No Bone Erosion', title: 'Stage 1: Localized Soft Tissue', content: 'Infection is limited to the external auditory canal and surrounding soft tissues. High-resolution CT (HRCT) shows no evidence of cortical bone destruction or demineralization.', focus: 'Prompt Medical Therapy', risk: 'High Remission (>90%)' },
+                { id: 'g2', label: 'Stage 2', sub: 'Bone Erosion Present', title: 'Stage 2: Osseous Involvement', content: 'CT imaging demonstrates clear cortical bone destruction, demineralization, or mastoid fullness, indicating progression to osteomyelitis of the temporal bone.', focus: 'Prolonged IV Antibiotics', risk: 'Moderate Risk' },
+                { id: 'g3a', label: 'Stage 3a', sub: 'Facial Nerve (CN VII) Palsy', title: 'Stage 3a: Facial Nerve Paralysis', content: 'Infection has reached the stylomastoid foramen, resulting in isolated facial nerve weakness or paralysis. This is a critical adverse prognostic indicator.', focus: 'Aggressive IV Therapy', risk: '33% Mortality Risk' },
+                { id: 'g3b', label: 'Stage 3b', sub: 'Multiple CN Involvement', title: 'Stage 3b: Advanced Skull Base Spread', content: 'Involvement of multiple cranial nerves (typically IX, X, XI at the jugular foramen). Indicates extensive skull base osteomyelitis.', focus: 'Multi-disciplinary Care', risk: 'High Mortality Risk' }
+            ],
+            clival: [
+                { id: 'c1', label: 'Stage 1', sub: 'Temporal Bone Only', title: 'Stage 1: Temporal Bone Limitation', content: 'Infection is strictly limited to the petrous portion of the temporal bone without clival extension.', focus: 'Standard Protocol', risk: 'Excellent Prognosis' },
+                { id: 'c2', label: 'Stage 2', sub: 'Partial Clival (<50%)', title: 'Stage 2: Partial Clival Extension', content: 'Infection has extended into the clivus but involves less than 50% of its total width.', focus: 'Hospitalization ~30 days', risk: 'Increased Morbidity' },
+                { id: 'c3', label: 'Stage 3', sub: 'Midline Clival (>50%)', title: 'Stage 3: Midline Clival Crossing', content: 'Extension into the clivus exceeding the midline. Significantly increased risk of bilateral spread and treatment failure.', focus: 'Adjunctive HBOT', risk: 'High Failure Rate' },
+                { id: 'c4', label: 'Stage 4', sub: 'Total Clival Involvement', title: 'Stage 4: Total Clival Destruction', content: 'Involvement of the entire clivus and surrounding structures. Represents the most severe form of the disease.', focus: 'Intensive Salvage Therapy', risk: '23-80% Mortality' }
+            ]
         };
+
+        let currentSystem = 'gleeson';
+
+        function switchSystem(system) {
+            currentSystem = system;
+            const tabs = { gleeson: document.getElementById('tab-gleeson'), clival: document.getElementById('tab-clival') };
+            
+            Object.keys(tabs).forEach(k => {
+                if (tabs[k]) {
+                    tabs[k].className = 'px-4 py-1.5 rounded text-sm transition-all ' + 
+                        (k === system ? 'font-semibold bg-white text-slate-800 shadow-sm' : 'font-medium text-slate-600 hover:text-slate-800');
+                }
+            });
+
+            renderControls();
+            renderStage(stagingSystems[system][0].id);
+        }
+
+        function renderControls() {
+            const container = document.getElementById('stage-controls');
+            container.innerHTML = stagingSystems[currentSystem].map(s => `
+                <button onclick="renderStage('${s.id}')" id="btn-${s.id}" class="stage-btn text-left p-4 rounded border-2 transition-all">
+                    <span class="font-bold block">${s.label}</span>
+                    <span class="text-xs font-normal opacity-70">${s.sub}</span>
+                </button>
+            `).join('');
+        }
+
+        function renderStage(id) {
+            const stage = stagingSystems[currentSystem].find(s => s.id === id);
+            const display = document.getElementById('stage-display');
+            
+            display.innerHTML = `
+                <h4 class="text-xl font-bold text-slate-800 mb-2">${stage.title}</h4>
+                <p class="text-slate-600 mb-4 text-sm">${stage.content}</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-3 rounded shadow-sm border-l-4 border-teal-500">
+                        <span class="text-[10px] uppercase font-bold text-slate-400">Clinical Focus</span>
+                        <p class="text-xs font-semibold">${stage.focus}</p>
+                    </div>
+                    <div class="bg-white p-3 rounded shadow-sm border-l-4 border-teal-500">
+                        <span class="text-[10px] uppercase font-bold text-slate-400">Survival Risk</span>
+                        <p class="text-xs font-semibold">${stage.risk}</p>
+                    </div>
+                </div>
+            `;
+
+            document.querySelectorAll('.stage-btn').forEach(btn => {
+                btn.className = 'stage-btn text-left p-4 rounded border-2 transition-all border-transparent hover:bg-slate-50 text-slate-600';
+            });
+            const activeBtn = document.getElementById(`btn-${id}`);
+            if (activeBtn) {
+                activeBtn.className = 'stage-btn text-left p-4 rounded border-2 transition-all border-teal-500 bg-teal-50 font-bold text-teal-800';
+            }
+        }
+
+        function initIncidenceChart() {
+            const ctx = document.getElementById('incidenceChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2002', '2005', '2008', '2011', '2014', '2017'],
+                    datasets: [{
+                        label: 'Annual Cases (England)',
+                        data: [123, 280, 510, 840, 1150, 1405],
+                        borderColor: '#0d9488',
+                        backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointBackgroundColor: '#0d9488'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        const pathogens = {
+            pseudomonas: {
+                title: 'Pseudomonas aeruginosa',
+                content: 'Non-commensal organism in the healthy ear. Uses proteolytic enzymes (elastase, alkaline protease) and Exotoxin A to degrade host tissues and evade the immune response. Biofilm formation provides a physical barrier against antibiotics.'
+            },
+            staph: {
+                title: 'Staphylococcus aureus (incl. MRSA)',
+                content: 'Increasingly reported, especially in non-diabetic patients or those with prior antibiotic exposure. Often requires specialized antibiotic coverage if methicillin-resistant.'
+            },
+            fungal: {
+                title: 'Fungal Pathogens (Aspergillus/Candida)',
+                content: 'Major cause of "fungal MOE" in severely immunocompromised patients or as a secondary infection following long-term antibiotic use. Presents significant diagnostic and therapeutic challenges.'
+            },
+            atypical: {
+                title: 'Atypical Gram-Negative Rods',
+                content: 'Klebsiella oxytoca, Proteus mirabilis, and E. coli have been identified in cases refractory to standard antipseudomonal therapy. Polymicrobial infections are common in treatment failures.'
+            }
+        };
+
+        function showPathogen(key) {
+            const detail = document.getElementById('pathogen-detail');
+            const p = pathogens[key];
+            
+            detail.innerHTML = `
+                <h4 class="text-xl font-bold text-slate-800">${p.title}</h4>
+                <p class="mt-2 text-slate-600 text-sm">${p.content}</p>
+            `;
+
+            // Update button styles
+            document.querySelectorAll('.pathogen-btn').forEach(btn => {
+                btn.classList.remove('bg-teal-600', 'text-white', 'border-teal-500');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            const activeBtn = document.getElementById(`btn-path-${key}`);
+            activeBtn.classList.add('bg-teal-600', 'text-white', 'border-teal-500');
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+        }
     </script>
 </body>
 </html>
